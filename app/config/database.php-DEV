@@ -1,0 +1,16 @@
+<?php
+class DATABASE_CONFIG {
+
+	var $default = array(
+		'driver' => 'mysqli',
+		'persistent' => false,
+		'host' => '10.50.67.41',
+		'login' => 'dal',
+		'password' => '',
+		'database' => 'dal',
+		'prefix' => '',
+		'encoding' => 'utf8',
+	);
+
+}
+?>
