@@ -39,11 +39,70 @@
 
 <body>
 	<div class="container">
-		asfdasda
+		<h1><img src="logo.png" alt="Presupuestate beta"/></h1>
+		<form>
+			<div class="clearfix">
+            	<label for="xlInput">Ingreso mensual</label>
+            	<div class="input">
+            	  <input type="text" size="30" name="" id="" class="xlarge">
+            	</div>
+          	</div>	
+			<div class="clearfix">
+            	<label for="xlInput">Ingreso mensual</label>
+            	<div class="input">
+					<select>
+						<option>holi</option>
+					</select>
+            	</div>
+          	</div>	
+			<div class="clearfix">
+            	<label for="xlInput">Integrantes de la familia</label>
+            	<div class="input">
+					<select>
+						<option>holi</option>
+					</select>
+            	</div>
+          	</div>	
+			<div class="clearfix">
+            	<label for="xlInput">Ubicación</label>
+            	<div class="input">
+					<select>
+						<option>holi</option>
+					</select>
+            	</div>
+          	</div>	
+			<div class="clearfix">
+            	<label for="">Universidad</label>
+            	<div class="input">
+					<select>
+						<option>holi</option>
+					</select>
+            	</div>
+          	</div>	
+			<div class="clearfix">
+            	<label for="">Carrera</label>
+            	<div class="input">
+					<select>
+						<option>holi</option>
+					</select>
+            	</div>
+          	</div>	
+			<div class="clearfix">
+            	<label for="">En que año entraria a la universidad</label>
+            	<div class="input">
+					<select>
+						<option>holi</option>
+					</select>
+            	</div>
+          	</div>	
+ 	        <div style="padding: 14px 19px;" class="well">
+          		<input type="button" value="Presupuestar!" class="btn large info"/>
+			</div>
+		</form>
 	</div>
-<!--<footer style="margin: 40px auto 15px; width:960px;">
-
-	</footer>-->
+	<footer style="margin: 40px auto 15px; width:960px;">
+		PRESUPUESTATE: UNA EMPRESA DEL HOLDING INTERNATIONAL BUSINESS CORPORATION FOR THE FUTURE OF THE PEOPLE AND BEST BUSINESS OF THE WORLD MANUFACTURADO EN HTML5. PORLAPUTA SE VE MEJOR EN CHROME. USALO AWEONAO!
+	</footer>
 	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>
