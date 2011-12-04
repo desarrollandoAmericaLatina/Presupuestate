@@ -16,7 +16,7 @@ class UtilitiesShell extends Shell {
 		
 		echo "Actualizando colegios\r\n\r\n";
 		foreach($schools as $school) {
-			echo "Actualizando ".$school['School']['name']."\r\n";
+			echo "\r\nActualizando ".$school['School']['name']."\r\n";
 			$simce = $this->School->getSimceById($school['School']['mineduc_id']);
 			
 			$simce_x = array_keys($simce);
@@ -45,7 +45,7 @@ class UtilitiesShell extends Shell {
 			$school_prices = array();
 
 			foreach($list_school_prices as $price) {
-				$school_prices[$price['SchoolPrices']['year']] = $price['SchoolPrices']['price'];
+				$school_prices[$price['SchoolPrice']['year']] = $price['SchoolPrice']['price'];
 			}
 
 			$school_prices_x = array_keys($school_prices);
@@ -72,15 +72,23 @@ class UtilitiesShell extends Shell {
 		
 		echo "\r\n\r\nUpdating Colleges\r\n";
 		foreach($colleges as $college) {
-			echo "Updating college: ".$college['College']['name']."\r\n";
+			echo "\r\n\r\nUpdating college: ".$college['College']['name']."\r\n";
 			
-			$degrees = $this->College->Degree->find("all", array("conditions" => array("Degree.active" => 1)));
+			$degrees = $this->College->Degree->find(
+				"all", 
+				array(
+					"conditions" => array(
+						"Degree.college_id" => $college['College']['id'],
+						"Degree.active" => 1
+					)
+				)
+			);
 
 			foreach($degrees as $degree) {
 
-				echo "Updating degree: ".$degree['Degree']['name']."\r\n";
+				echo "\r\nUpdating degree: ".$degree['Degree']['name']."\r\n";
 
-				$list_degree_prices = $this->College->Degree->DegreesPrice->find(
+				$list_degree_prices = $this->College->Degree->DegreesHistory->find(
 					"all",
 					array(
 						"conditions" => array(
@@ -89,20 +97,29 @@ class UtilitiesShell extends Shell {
 					)
 				);
 			
-
+				
 				$degree_prices = array();
+				$last_entered = array();
 
 				foreach($list_degree_prices as $price) {
-					$degree_prices[$price['DegreesPrice']['year']] = $price['DegreesPrice']['price'];
+					if($price['DegreesHistory']['price']) $degree_prices[$price['DegreesHistory']['year']] = $price['DegreesHistory']['price'];
+					if($price['DegreesHistory']['last_entered']) $last_entered[$price['DegreesHistory']['year']] = $price['DegreesHistory']['last_entered'];
 				}
 			
+				$last_entered_x = array_keys($last_entered);
+				$last_entered_y = array_values($last_entered);
+
 				$degree_prices_x = array_keys($degree_prices);
 				$degree_prices_y = array_values($degree_prices);
 	
 				$degree_prices_function = linear_regression($degree_prices_x, $degree_prices_y);
 				echo "Price function: ".$degree_prices_function."\r\n";
 
+				$last_entered_function = linear_regression($last_entered_x, $last_entered_y);
+				echo "Last entered function: ".$last_entered_function."\r\n";
+
 				$degree['Degree']['price_function'] = $degree_prices_function;
+				$degree['Degree']['last_entered_function'] = $last_entered_function;
 					
 				$this->College->Degree->save($degree);
 			}
