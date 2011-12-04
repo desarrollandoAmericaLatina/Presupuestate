@@ -57,13 +57,13 @@
 				<span class="ubicationItem"><?=$s['data']['School']['address']?>, <?=$s['data']['School']['city']?></span>
 			</div>
 			<div class="information">
-				<span class="ubicationItem"><?=$s['data']['School']['phone']?></span>
+				<span class="ubicationItem">Teléfono : <?=$s['data']['School']['phone']?></span>
 			</div>
 			<div class="information">
-				<span class="ubicationItem"><?=$s['data']['School']['email']?></span>
+				<span class="ubicationItem">Email : <a style="text-decoration: none; color:#666;" href="mailto:<?=$s['data']['School']['email']?>" alt="contactar"><?=$s['data']['School']['email']?></a></span>
 			</div>
 			<div class="information">
-				<span class="ubicationItem"><?=$s['data']['School']['dependency']?></span>
+				<span class="ubicationItem">Dependencia : <?=$s['data']['School']['dependency']?></span>
 			</div>
 		</div>
 		<div class="itemData clearfix">
