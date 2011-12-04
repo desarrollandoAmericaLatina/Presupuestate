@@ -13,11 +13,12 @@
 		<b>Para alcanzar esta meta debes ahorrar mensualmente<span class="save pull-right">$1.000.000</span> </b>
 	</div>
 	<div class="clearfix">
-		<div class="clearfix" id="incomeInformationChart" style="display:none;">
+		<div class="clearfix" id="incomeInformationChart">
+			<h5>Gráfico de proyección</h5><br/>
 			<img src="https://chart.googleapis.com/chart?cht=s&chd=t:12,16,16,24,26,28,41,51,66,68,13,45,81|16,14,1973,34,22,31,31,48,71,120,15,38,84&chxt=x,y&chs=500x125&chm=o,0000FF,0,-1,0,0|o,f9b103,0,0:9:,5,0.1|D,999999,1,10:,1,1"/>
 			<img src="/img/indice.png"/>
 		</div>
-		<a href="#" style="font-weight: normal;" id="viewChart" class="pull-right btn secondary small">Ver analisis de presupuesto</a>
+		<a href="#" style="font-weight: normal;" id="viewChart" class="pull-right btn secondary small">Gráfico de proyección</a>
 	</div>
 
 	<div id="universityInfo">
@@ -47,14 +48,14 @@
 	<h3><img src="/img/28-star.png"/>Colegios recomendados</h3>
 	<?foreach($schools as $s): ?>
 	<div class="educationItem clearfix">
-		<?=$s['data']['School']['name']?>
+		<?=$s['data']['School']['name']?> - <small><?=$s['data']['School']['city']?></small>
 		<div class="indicator"></div>
 	</div>	
 	<div class="itemContainer clearfix">
 		<div class="ubication">
 			<img class="mapa" src="http://maps.google.com/maps/api/staticmap?center=<?=$s['data']['School']['address']?>,<?=$s['data']['School']['city']?>,chile&zoom=15&size=100x100&sensor=false&markers=color:blue|<?=$s['data']['School']['address']?>,<?=$s['data']['School']['city']?>,chile"/>
 			<div class="information">
-				<span class="ubicationItem"><?=$s['data']['School']['address']?>, <?=$s['data']['School']['city']?></span>
+				<span class="ubicationItem"><?=$s['data']['School']['address']?></span>
 			</div>
 			<div class="information">
 				<span class="ubicationItem">Teléfono : <?=$s['data']['School']['phone']?></span>
@@ -89,11 +90,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		//$('.itemContainer:first').show();
-		
-		$('')
-		
-		
+		$('.itemContainer:first').show();
+		$('.educationItem:first').addClass('active');
 		$('.educationItem').click(function(){
 			$('.itemContainer').slideUp('fast');
 			$(this).next().slideDown('fast');
