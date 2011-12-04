@@ -3,6 +3,10 @@ class School extends AppModel {
 	var $name = 'School';
 
 	var $displayField = 'name';
+
+	var $hasMany = array(
+		"SchoolPrice"
+	);
 	
 	function getSimceById($a) { 
 		$data4to = json_decode($this->getDataMineduc('rbd', $a, 'Establecimiento_Simce4Basico'), true);
@@ -27,6 +31,7 @@ class School extends AppModel {
 
 	function getPsuById($a) {
 		$psuData = json_decode($this->getDataMineduc('rbd', $a, 'Establecimiento_PSU'), true);
+		$process = array();
 		foreach($psuData['d'] as $jd) {
 			$mat = $jd['psu_matematica'] * 0.5;
 			$len = $jd['psu_lenguaje'] * 0.2;
