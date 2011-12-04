@@ -30,7 +30,12 @@ class SchoolController extends AppController {
 			if (!empty($current_key)) {
 			    $document = new DOMDocument();
 				$document->loadHTML($line);
-				$results[$current_key] = $document->getElementsByTagName('td')->item(0)->nodeValue;
+				$value = $document->getElementsByTagName('td')->item(0)->nodeValue; 
+				if (in_array($current_key, array('RBD', 'matricula_total_alumnos', 'promedio_alumnos_curso' ))) {
+					$results[$current_key] = intval($value);
+				} else {
+					$results[$current_key] = $value;
+				}
 				$current_key = '';
 				continue;
 			}
@@ -68,6 +73,11 @@ class SchoolController extends AppController {
 			/*if (preg_match('height=.18. width=.557.', $line)) {
 				$results['nombre'] = $line;
 			}*/
+			if (preg_match("|height=\"18\" width=\"557\"|U", $line)) {
+				$document = new DOMDocument();
+				$document->loadHTML($line);
+				$results['nombre'] = $document->getElementsByTagName('td')->item(0)->nodeValue;
+			}
 			
 		}
 		echo json_encode($results);
