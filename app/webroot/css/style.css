@@ -83,16 +83,17 @@ label{
 	    height: 62px;
 	    margin: 5px;
 	    width: 120px;
-		-webkit-box-shadow: inset 1px 1px 15px 1px #cccccc;
-		-moz-box-shadow: inset 1px 1px 15px 1px #cccccc;
-		box-shadow: inset 1px 1px 15px 1px #cccccc; 
+		-webkit-box-shadow: inset 1px 1px 15px 1px #b5b5b5;
+		-moz-box-shadow: inset 1px 1px 15px 1px #b5b5b5;
+		box-shadow: inset 1px 1px 15px 1px #b5b5b5; 
 		-webkit-border-radius: 9px;
 		-moz-border-radius: 9px;
 		border-radius: 9px; 
+		background-image:url('../img/trans.png');
 	}
 
 	.itemData .content{
-		color:#c3bfbf;
+		color:#999;
 		font-size:30px;
 		text-align: center;
 		width:100%;
