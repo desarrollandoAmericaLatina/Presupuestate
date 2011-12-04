@@ -71,5 +71,49 @@ class School extends AppModel {
 		
 		return $result;
 	}
+
+	function price_projection($school_id, $year) {
+		$this->id = $school_id;
+
+		$function = $this->field("price_function");
+		$math = '$result = '.str_replace("x", $year, $function).';';
+		eval($math);
+
+		return $result;	
+	}
+
+	function calculate_distance($school_id, $latitude, $longitude) {
+		$this->id = $school_id;
+
+		$latitude_school = $this->field("latitude");
+		$longitude_school = $this->field("longitude");
+
+		$distance = sqrt(pow(abs($latitude_school - $latitude), 2) + pow(abs($longitude_school - $longitude), 2));
+
+		return $distance;
+	}
+
+	function simce_average_projection($school_id, $year) {
+		$this->id = $school_id;
+
+		$function = $this->field("simce_function");
+		$math = '$result = '.str_replace("x", $year, $function).';';
+		eval($math);
+
+		return $result;	
+	}
+
+
+	function psu_average_projection($school_id, $year) {
+		$this->id = $school_id;
+
+		$function = $this->field("psu_function");
+		$math = '$result = '.str_replace("x", $year, $function).';';
+		eval($math);
+
+		return $result;	
+	}
+
+
 }
 ?>

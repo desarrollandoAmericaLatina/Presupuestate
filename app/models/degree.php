@@ -8,7 +8,18 @@ class Degree extends AppModel {
 	);
 
 	var $hasMany = array(
-		"DegreesPrice"
+		"DegreesHistory"
 	);
+
+	function last_entered_projection($degree_id, $year) {
+		$this->id = $degree_id;
+
+		$function = $this->field("last_entered_function");
+		$math = '$result = '.str_replace("x", $year, $function).';';
+		pr($math);
+		eval($math);
+
+		return $result;	
+	}
 }
 ?>
