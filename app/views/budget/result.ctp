@@ -62,11 +62,11 @@
 			<span class="title">Mensualidad</span>
 		</div>
 		<div class="itemData clearfix">
-			<span class="content">$<?=$s['simce_average_projection']?></span>		
+			<span class="content"><?=$s['simce_average_projection']?></span>		
 			<span class="title">% SIMCE</span>
 		</div>
 		<div class="itemData clearfix">
-			<span class="content">$<?=$s['psu_average_projection']?></span>		
+			<span class="content"><?=$s['psu_average_projection']?></span>		
 			<span class="title">Puntaje PSU</span>
 		</div>
 	</div>
