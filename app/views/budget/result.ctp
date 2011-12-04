@@ -46,6 +46,7 @@
 
 <div class="span7" style="float:left;">
 	<h3><img src="/img/28-star.png"/>Colegios recomendados</h3>
+	<?if(!empty($schools)): ?>
 	<?foreach($schools as $s): ?>
 	<div class="educationItem clearfix">
 		<?=$s['data']['School']['name']?> - <small><?=$s['data']['School']['city']?></small>
@@ -81,6 +82,9 @@
 		</div>
 	</div>
 	<?endforeach;?>
+	<?else:?>
+	<p>No hemos encontrado un establecimiento acorde con los criterios de busqueda.</p>
+	<?endif;?>
 	<div id="colofon">
 		<h2><img src="/img/09-chat-2.png"/>¿Necesitas ayuda?</h2>
 		<p> Cualquier duda o consulta contactate al correo <b>contacto[at]presupuestate[dot]com</b></p>

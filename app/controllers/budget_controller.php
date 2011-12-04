@@ -8,16 +8,14 @@ class BudgetController extends AppController {
 		$schoolData = $this->Session->read('schoolData');
 		$collegeData = $this->Session->read('collegeData');
 		$schools = array();
-		if(!empty($schoolData)) {
-			foreach($schoolData as $k => $v) {
-				$schools[$k]['data'] = $this->School->find('first', array('conditions' => array('School.id' => $k)));
-				$schools[$k]['price'] = $v['average_price'];
-				$schools[$k]['simce_average_projection'] = $v['simce_average_projection'];
-				$schools[$k]['psu_average_projection'] = $v['psu_average_projection'];
-			}
-		} else {
-			$this->redirect('/');
+		
+		foreach($schoolData as $k => $v) {
+			$schools[$k]['data'] = $this->School->find('first', array('conditions' => array('School.id' => $k)));
+			$schools[$k]['price'] = $v['average_price'];
+			$schools[$k]['simce_average_projection'] = $v['simce_average_projection'];
+			$schools[$k]['psu_average_projection'] = $v['psu_average_projection'];
 		}
+		
 		$this->set('schools', $schools);
 		$this->set('college', $collegeData);
 	}
