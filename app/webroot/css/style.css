@@ -28,26 +28,49 @@ label{
 }
 
 .educationItem{
-	padding:5px;
-	background-color: #eee;
-	color:#999;
-	border-bottom:1px solid #c7c7c6;
-	border-top:1px solid #c7c7c6;
-	cursor:pointer;
-	width:390px;
-	float:left;
-	margin-top: -1px;
+   background-image: url("../img/more.png");
+    background-position: 5px 50%;
+    background-repeat: no-repeat;
+    border-bottom: 1px dotted #C7C7C6;
+    border-top: 1px dotted #C7C7C6;
+    color: #999999;
+    cursor: pointer;
+    float: left;
+    margin-top: -1px;
+    padding: 5px 5px 5px 21px;
+    position: relative;
+    width: 365px;
 }
 
 	.educationItem:hover{
-		background-color:#ddd;
+		background-color:#fff;
 		color:#666;
 	}
 
 	.educationItem.active{
-		background-color: #909090;
+		background-color: #f9b103;
 		color:#fff;
+   		background-image: url("../img/menos.png");
+
 	}
+
+	.educationItem.active .indicator{
+		display:block;
+	}
+	
+	.educationItem .indicator {
+	    border-left: 10px solid transparent;
+	    border-right: 10px solid transparent;
+	    border-top: 10px solid #f9b103;
+	    bottom: -14px;
+	    display: none;
+	    float: left;
+	    height: 10px;
+	    left: -1px;
+	    position: absolute;
+	    width: 0;
+	}
+
 
 .itemContainer{
 	display:none;
@@ -172,9 +195,10 @@ label{
 }
 
 #universityInfo{
-	border-top:1px solid #c2c2c2;
+	border-top:1px dotted #c2c2c2;
 	float:left;
-	margin-top: 10px;
+	margin-top: 20px;
+	padding-top: 10px; 
 }
 
 #incomeInformationChart{
@@ -184,4 +208,17 @@ label{
 	-webkit-border-radius: 9px;
 	-moz-border-radius: 9px;
 	border-radius: 9px; 
+}
+
+h3 img{
+    float: left;
+    margin-right: 10px;
+    margin-top: 6px;
+    width: 18px;
+}
+
+h5 img{
+    float: left;
+    margin-right: 10px;
+    margin-top: 6px;
 }
