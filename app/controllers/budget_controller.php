@@ -36,10 +36,11 @@ class BudgetController extends AppController {
 	}
 	
 	function dataProcess() {
-		//$schoolData = $this->schoolProcess($this->data['Recipe']['budget'],$this->data['Recipe']['family_nr'],$this->data['Recipe']['location'],$this->data['Recipe']['college'], $this->data['Recipe']['degree']);
-		
-		$schoolData = $this->schoolProcess(1231233,8,9,1,1);
-		$collegeData = $this->degreeProcess(1,500000,2024);
+		$data = $this->data;
+		$schoolData = $this->schoolProcess($this->data['Recipe']['budget'],$this->data['Recipe']['family_nr'],$this->data['Recipe']['location'],$this->data['Recipe']['college'], $this->data['Recipe']['degree']);
+		$collegeData = $this->degreeProcess($data['Recipe']['degree'], $data['Recipe']['budget'],2024);
+		//$schoolData = $this->schoolProcess(1231233,8,9,1,1);
+		//$collegeData = $this->degreeProcess(1,500000,2024);
 		$this->Session->write('schoolData', $schoolData);
 		$this->Session->write('collegeData', $collegeData);
 		$this->redirect(array('controller' => 'budget', 'action' => 'result'));

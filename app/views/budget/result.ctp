@@ -10,12 +10,12 @@
 		<b>El costo estimado de la carrera <span class="income pull-right">$<?=number_format($college['degree_total_price_projected'], 0, ",", ".");?></span> </b>
 	</div>
 	<div class="incomeBox">
-		<b>Para alcanzar esta meta debes ahorrar mensualmente<span class="save pull-right">$<?=number_format($college['monthly_save'], 0, ",", ".");?><</span> </b>
+		<b>Para alcanzar esta meta debes ahorrar mensualmente<span class="save pull-right">$<?=number_format($college['monthly_save'], 0, ",", ".");?></span> </b>
 	</div>
 	<div class="clearfix">
 		<div class="clearfix" id="incomeInformationChart">
 			<h5>Gráfico de proyección</h5><br/>
-			<img src="<?=$college['img_chart'];?>"/>
+			<img src="<?=$college['chart_img'];?>"/>
 			<img src="/img/indice.png"/>
 		</div>
 		<a href="#" style="font-weight: normal;" id="viewChart" class="pull-right btn secondary small">Gráfico de proyección</a>
@@ -32,7 +32,7 @@
 			<span class="title">Costo estimado</span>
 		</div>
 		<div class="itemData big clearfix">
-			<span class="content"><?=$college['last_entered_projection'];?></span>		
+			<span class="content"><?=round($college['last_entered_projection']);?></span>		
 			<span class="title">PSU estimado</span>
 		</div>
 		<div class="itemData big clearfix">
@@ -68,15 +68,15 @@
 			</div>
 		</div>
 		<div class="itemData clearfix">
-			<span class="content" style="font-size:25px;">$<?=$s['price']?></span>		
+			<span class="content" style="font-size:25px;">$<?=round($s['price'])?></span>		
 			<span class="title">Mensualidad</span>
 		</div>
 		<div class="itemData clearfix">
-			<span class="content"><?=$s['simce_average_projection']?></span>		
-			<span class="title">% SIMCE</span>
+			<span class="content"><?=round($s['simce_average_projection'])?></span>		
+			<span class="title">Promedio SIMCE</span>
 		</div>
 		<div class="itemData clearfix">
-			<span class="content"><?=$s['psu_average_projection']?></span>		
+			<span class="content"><?=round($s['psu_average_projection'])?></span>		
 			<span class="title">Puntaje PSU</span>
 		</div>
 	</div>
@@ -99,7 +99,9 @@
 			$(this).addClass('active');
 		});
 				
-		$('#viewChart').click(function(){
+		$('#viewChart').live("click",function(event){
+			event.preventDefault();
+
 			$('#incomeInformationChart').slideToggle();
 			
 		});
