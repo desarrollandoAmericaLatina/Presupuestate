@@ -178,7 +178,7 @@ label{
 }
 
 .ubicationItem{
-	border-bottom:1px solid #ccc;
+	border-bottom:1px dotted #999;
 	width:260px;
 	padding: 3px 0px;
 	float: left;

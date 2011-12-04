@@ -41,7 +41,7 @@
 <body>
 	<div class="container">
 		<? echo $content_for_layout; ?>
-		<footer class="container" style="border-top: none; width:100%; float:left;" >
+		<footer class="container" style="border-top: none; width:100%; float:left; margin-top:40px;" >
 			<small class="pull-right">
 				powered by <b><a href="http://www.weebls-stuff.com//flash/397_tamale.swf" target="blank_" style="color:#666;">TACHANGOU</a></b>
 			</small>
