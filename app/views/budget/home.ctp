@@ -51,6 +51,7 @@
 					<select rel="degree" id="degree_select" class="xlarge clearfix" name="data[Recipe][degree]">
 						<option value="0">Selecciona carrera</option>
 					</select>
+					<img style="display:none;" src="/img/loader.gif" id="loader"/>
             	</div>
           	</div>	
 
@@ -139,6 +140,7 @@
 	});
 	
 	function getDegree(id) {
+		$('#loader').show();
 		$.ajax({
 				url: "/budget/getDegree/" + id,
 				type: "POST",
@@ -148,8 +150,8 @@
 					$('#degree_select').append($("<option></option>").attr("value",0).text('Selecciona una carrera'));
 					$.each(data, function(key, value) {
 			            $('#degree_select').append($("<option></option>").attr("value",key).text(value));
+				       	$('#loader').fadeOut();
 			        });
-
 				}
 			});
 	}
