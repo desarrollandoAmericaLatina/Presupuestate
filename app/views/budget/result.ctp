@@ -23,8 +23,8 @@
 	<div id="universityInfo">
 		<h5><img src="/img/140-gradhat.png"/>Medicina / Universidad de Chile</h5>
 		<div class="itemData big clearfix">
-			<span class="content">$427.000</span>		
-			<span class="title">Arancel Estimado</span>
+			<span class="content" style="font-size:23px;">$427.000</span>		
+			<span class="title">Costo estimado</span>
 		</div>
 		<div class="itemData big clearfix">
 			<span class="content">650</span>		
@@ -33,6 +33,10 @@
 		<div class="itemData big clearfix">
 			<span class="content">650</span>		
 			<span class="title">Estimado PSU</span>
+		</div>
+		<div class="itemData big clearfix">
+			<span class="content">6</span>		
+			<span class="title">Años de duracion</span>
 		</div>
 		
 	</div>
@@ -129,6 +133,10 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		//$('.itemContainer:first').show();
+		
+		$('')
+		
+		
 		$('.educationItem').click(function(){
 			$('.itemContainer').slideUp('fast');
 			$(this).next().slideDown('fast');

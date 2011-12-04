@@ -116,7 +116,7 @@ label{
 	    float: left;
 	    height: 62px;
 	    margin: 5px;
-	    width: 160px;
+	    width: 117px;
 		-webkit-box-shadow: inset 1px 1px 15px 1px #b5b5b5;
 		-moz-box-shadow: inset 1px 1px 15px 1px #b5b5b5;
 		box-shadow: inset 1px 1px 15px 1px #b5b5b5; 
@@ -259,3 +259,13 @@ h2 img{
 	color:#7a7a79;
 	margin-left: 30px;
 }
+
+
+.error_form{
+	color:red;
+}
+
+	.error_form input,.error_form select{
+		color:#d4493b;
+		background-color:#ffb9b2;
+	}

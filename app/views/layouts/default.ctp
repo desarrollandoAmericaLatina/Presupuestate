@@ -40,35 +40,15 @@
 
 <body>
 	<div class="container">
-	<? echo $content_for_layout; ?>
+		<? echo $content_for_layout; ?>
+		<footer class="container" style="border-top: none; width:100%; float:left;" >
+			<small class="pull-right">
+				powered by <b><a href="http://www.weebls-stuff.com/songs/Tamale/" target="blank_" style="color:#666;">TACHANGOU</a></b>
+			</small>
+		</footer>	
 
 	</div>
-	
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('input[type="text"]').val('');
-		$('select').val('0');
-		
-		$('#principalForm input[type="text"],#principalForm select').focusin(function(){
-			$('#'+$(this).attr('rel')+' label').fadeIn();
-		});	
 
-		$('#principalForm input[type="text"]').focusout(function(){
-			if($(this).val()==""){
-				$('#'+$(this).attr('rel')+' label').fadeOut();
-			}
-		});	
-
-		$('#principalForm select').click(function(){
-			if($(this).val()=="0"){
-				$('#'+$(this).attr('rel')+' label').fadeOut();
-			}else{
-				$('#'+$(this).attr('rel')+' label').fadeIn();
-			}
-		});	
-
-	});
-</script>
 	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>
