@@ -29,5 +29,17 @@ class Degree extends AppModel {
 		);
 		return $data;
 	}
+
+	function price_projection($degree_id, $year) {
+		$this->id = $degree_id;
+
+		$function = $this->field("price_function");
+		$math = '$result = '.str_replace("x", $year, $function).';';
+		eval($math);
+
+		return $result;	
+	}
+
+
 }
 ?>
