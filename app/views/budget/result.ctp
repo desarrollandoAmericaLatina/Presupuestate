@@ -82,7 +82,7 @@
 	<?endforeach;?>
 	<div id="colofon">
 		<h2><img src="/img/09-chat-2.png"/>¿Necesitas ayuda?</h2>
-		<p> Cualquier duda o consulta contactate al correo <b>contacto[at]presupuestate.com</b></p>
+		<p> Cualquier duda o consulta contactate al correo <b>contacto[at]presupuestate[dot]com</b></p>
 	</div>
 </div>
 
