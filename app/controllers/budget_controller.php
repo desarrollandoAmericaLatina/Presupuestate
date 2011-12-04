@@ -9,11 +9,13 @@ class BudgetController extends AppController {
 		$collegeData = $this->Session->read('collegeData');
 		$schools = array();
 		
-		foreach($schoolData as $k => $v) {
-			$schools[$k]['data'] = $this->School->find('first', array('conditions' => array('School.id' => $k)));
-			$schools[$k]['price'] = $v['average_price'];
-			$schools[$k]['simce_average_projection'] = $v['simce_average_projection'];
-			$schools[$k]['psu_average_projection'] = $v['psu_average_projection'];
+		if(isset($schoolData)) {
+			foreach($schoolData as $k => $v) {
+				$schools[$k]['data'] = $this->School->find('first', array('conditions' => array('School.id' => $k)));
+				$schools[$k]['price'] = $v['average_price'];
+				$schools[$k]['simce_average_projection'] = $v['simce_average_projection'];
+				$schools[$k]['psu_average_projection'] = $v['psu_average_projection'];
+			}
 		}
 		
 		$this->set('schools', $schools);
