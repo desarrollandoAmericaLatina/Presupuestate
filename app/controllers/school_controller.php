@@ -4,15 +4,10 @@ if (!defined('RBD_REQUEST_URL')) {
 	define('RBD_REQUEST_URL', 'http://infoescuela.mineduc.cl/FichaEstablecimiento/FichaEstablecimiento');
 }
 
-class AddressController extends AppController {
+class SchoolController extends AppController {
 
-	var $name = 'Address';
+	var $name = 'School';
 	var $uses = array();
-	
-	function index() {
-
-		
-	}
 	
 	function get_school_info_by_rbd($rbd = null) {
 
