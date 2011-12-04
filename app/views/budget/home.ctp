@@ -16,7 +16,10 @@
             	<div class="input">
 					<select class="xlarge" rel="family"  name="data[Recipe][family_nr]">
 						<option value="0">Ingresa los integrantes de tu familia</option>
-						<option value="2">holi</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
 					</select>
             	</div>
           	</div>	
@@ -25,7 +28,8 @@
             	<div class="input">
 					<select class="xlarge" rel="ubication" name="data[Recipe][location]">
 						<option value="0">Selecciona ubicación</option>
-						<option value="2">holi</option>
+						<option value="1">Santiago</option>
+						<option value="2">Providencia</option>
 					</select>
             	</div>
           	</div>	
@@ -37,8 +41,6 @@
 						<?foreach($college as $k => $v):?>
 						<option value="<?=$k?>"><?=$v?></option>
 						<?endforeach;?>
-
-
 					</select>
             	</div>
           	</div>	
@@ -47,7 +49,6 @@
             	<div class="input">
 					<select rel="degree" id="degree_select" class="xlarge" name="data[Recipe][degree]">
 						<option value="0">Selecciona carrera</option>
-						<option value="2">holi</option>
 					</select>
             	</div>
           	</div>	
