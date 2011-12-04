@@ -14,19 +14,34 @@ class School extends AppModel {
 		$data1ero = json_decode($this->getDataMineduc('rbd', $a, 'Establecimiento_SimceIIMedio'), true);
 
 		$process = array();
+		$average = array();
+		
 		foreach($data4to['d'] as $jd) {
-			$average = ($jd['simce_leng'] + $jd['simce_mate']) / 2; 
-			$process[0][$jd['agno']] = round($average, 0);
+			$process[$jd['agno']][] = $jd['simce_leng'];
+			$process[$jd['agno']][] = $jd['simce_mate'];
 		}
+		
 		foreach($data8vo['d'] as $jd) {
-			$average = ($jd['simce_leng'] + $jd['simce_mate']) / 2; 
-			$process[1][$jd['agno']] = round($average, 0);
+			$process[$jd['agno']][] = $jd['simce_leng'];
+			$process[$jd['agno']][] = $jd['simce_mate'];
 		}
+		
 		foreach($data1ero['d'] as $jd) {
-			$average = ($jd['simce_leng'] + $jd['simce_mate']) / 2; 
-			$process[2][$jd['agno']] = round($average, 0);
+			$process[$jd['agno']][] = $jd['simce_leng'];
+			$process[$jd['agno']][] = $jd['simce_mate'];
 		}
-		return $process[0];
+
+		foreach($process as $k => $v) {
+			$sum = 0;
+			$i = 0;
+			foreach($v as $p) {
+				$sum += $p;
+				$i++;
+			}
+			$average[$k] = round(($sum/$i), 0);
+		}
+
+		return $average;
 	}
 
 	function getPsuById($a) {
