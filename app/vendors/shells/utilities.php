@@ -13,25 +13,27 @@ class UtilitiesShell extends Shell {
 				)
 			)
 		);
-
+		
+		echo "Actualizando colegios\r\n\r\n";
 		foreach($schools as $school) {
+			echo "Actualizando ".$school['School']['name']."\r\n";
 			$simce = $this->School->getSimceById($school['School']['mineduc_id']);
 			
 			$simce_x = array_keys($simce);
 			$simce_y = array_values($simce);
 
 			$simce_function = linear_regression($simce_x, $simce_y);
+			echo "Simce function: ".$simce_function."\r\n";
 
-
-			$psu = $this->School->getPSUById($school['School']['mineduc_id']);
+			$psu = $this->School->getPsuById($school['School']['mineduc_id']);
 
 			$psu_x = array_keys($psu);
 			$psu_y = array_values($psu);
 
 			$psu_function = linear_regression($psu_x, $psu_y);
-
-
-			$list_school_prices = $this->School->SchoolPrices->find(
+			echo "PSU function: ".$psu_function."\r\n";
+			
+			$list_school_prices = $this->School->SchoolPrice->find(
 				"all",
 				array(
 					"conditions" => array(
@@ -50,11 +52,13 @@ class UtilitiesShell extends Shell {
 			$school_prices_y = array_values($school_prices);
 
 			$school_prices_function = linear_regression($school_prices_x, $school_prices_y);
-
+			echo "Prices function: ".$school_prices_function."\r\n";
 			
 			$school['School']['psu_function'] = $psu_function;
 			$school['School']['simce_function'] = $simce_function;
 			$school['School']['price_function'] = $school_prices_function;
+
+			$this->School->save($school);
 		}
 
 		$colleges = $this->College->find(
@@ -65,31 +69,45 @@ class UtilitiesShell extends Shell {
 				)
 			)
 		);
-
+		
+		echo "\r\n\r\nUpdating Colleges\r\n";
 		foreach($colleges as $college) {
+			echo "Updating college: ".$college['College']['name']."\r\n";
+			
+			$degrees = $this->College->Degree->find("all", array("conditions" => array("Degree.active" => 1)));
 
-			$list_college_prices = $this->College->CollegePrices->find(
-				"all",
-				array(
-					"conditions" => array(
-						"college_id" => $school['College']['id'],
+			foreach($degrees as $degree) {
+
+				echo "Updating degree: ".$degree['Degree']['name']."\r\n";
+
+				$list_degree_prices = $this->College->Degree->DegreesPrice->find(
+					"all",
+					array(
+						"conditions" => array(
+							"degree_id" => $degree['Degree']['id'],
+						)
 					)
-				)
-			);
+				);
+			
 
-			$college_prices = array();
+				$degree_prices = array();
 
-			foreach($list_college_prices as $price) {
-				$college_prices[$price['CollegePrices']['year']] = $price['CollegePrices']['price'];
+				foreach($list_degree_prices as $price) {
+					$degree_prices[$price['DegreesPrice']['year']] = $price['DegreesPrice']['price'];
+				}
+			
+				$degree_prices_x = array_keys($degree_prices);
+				$degree_prices_y = array_values($degree_prices);
+	
+				$degree_prices_function = linear_regression($degree_prices_x, $degree_prices_y);
+				echo "Price function: ".$degree_prices_function."\r\n";
+
+				$degree['Degree']['price_function'] = $degree_prices_function;
+					
+				$this->College->Degree->save($degree);
 			}
-
-			$college_prices_x = array_keys($college_prices);
-			$college_prices_y = array_values($college_prices);
-
-			$college_prices_function = linear_regression($college_prices_x, $college_prices_y);
-
-			$school['College']['price_function'] = $college_prices_function;
-
 		}
+
+		echo "\r\nDone\r\n";
 	}
 }
