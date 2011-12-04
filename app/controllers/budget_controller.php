@@ -96,7 +96,7 @@ class BudgetController extends AppController {
 			if($psu_average_projection >= $last_entered_projection) {
 				$index = 0;
 				
-				$average_year = ($year - $actual_year) / 2;
+				$average_year = ($year + $actual_year) / 2;
 
 				$average_price = $this->School->price_projection($school_id, $average_year);
 
