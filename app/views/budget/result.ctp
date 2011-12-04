@@ -49,14 +49,14 @@
 	<?if(!empty($schools)): ?>
 	<?foreach($schools as $s): ?>
 	<div class="educationItem clearfix">
-		<?=$s['data']['School']['name']?> - <small><?=$s['data']['School']['city']?></small>
+		<?=ucfirst(strtolower($s['data']['School']['name']))?> - <small><?=ucfirst(strtolower($s['data']['School']['city']))?></small>
 		<div class="indicator"></div>
 	</div>	
 	<div class="itemContainer clearfix">
 		<div class="ubication">
-			<img class="mapa" src="http://maps.google.com/maps/api/staticmap?center=<?=$s['data']['School']['address']?>,<?=$s['data']['School']['city']?>,chile&zoom=15&size=100x100&sensor=false&markers=color:blue|<?=$s['data']['School']['address']?>,<?=$s['data']['School']['city']?>,chile"/>
+			<img class="mapa" src="http://maps.google.com/maps/api/staticmap?center=<?=$s['data']['School']['address']?>,<?=$s['data']['School']['city']?>,chile&zoom=15&size=100x100&sensor=false&markers=color:blue|<?=$s['data']['School']['address']?>,<?=ucfirst(strtolower($s['data']['School']['city']))?>,chile"/>
 			<div class="information">
-				<span class="ubicationItem"><?=$s['data']['School']['address']?></span>
+				<span class="ubicationItem"><?=ucfirst(strtolower($s['data']['School']['address']))?></span>
 			</div>
 			<div class="information">
 				<span class="ubicationItem">Teléfono : <?=$s['data']['School']['phone']?></span>
@@ -69,7 +69,7 @@
 			</div>
 		</div>
 		<div class="itemData clearfix">
-			<span class="content" style="font-size:25px;">$<?=round($s['price'])?></span>		
+			<span class="content" style="font-size:25px;">$<?=number_format(round($s['price']),0,',','.');?></span>		
 			<span class="title">Mensualidad</span>
 		</div>
 		<div class="itemData clearfix">

@@ -57,6 +57,14 @@ class School extends AppModel {
 		return $process;
 	}
 
+
+	function getLatLong($a) {
+		$psuData = json_decode($this->getDataMineduc('rbd', $a, 'Establecimiento_PSU'), true);
+		$process = array("latitude" => $psuData["d"][0]["latitud"], "longitude" => $psuData["d"][0]["longitud"]);
+		return $process;
+	}
+
+
 	function getDataMineduc($field, $value, $data ,$encoding = 'json') {
 		$url = 'http://data.mineduc.cl/odata/' . $data . '/?';
 		$url_data = $url . '$filter=' . $field . '%20eq%20' . $value . '&';

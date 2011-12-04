@@ -137,8 +137,12 @@ class UtilitiesShell extends Shell {
 			$school_prices_function = linear_regression($school_prices_x, $school_prices_y);
 			echo "Prices function: ".$school_prices_function."\r\n";
 
+			$lat_long = $this->School->getLatLong($school['School']['mineduc_id']);
+
 			$info = $this->get_school_info_by_rbd($school['School']['mineduc_id']);
 			
+			$school['School']['latitude'] = $lat_long['latitude'];
+			$school['School']['longitude'] = $lat_long['longitude'];
 			$school['School']['address'] = $info['direccion'];
 			$school['School']['city'] = $info['comuna'];
 			$school['School']['email'] = $info['email'];

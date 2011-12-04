@@ -109,10 +109,10 @@ class BudgetController extends AppController {
 
 				$simce_average_projection = $this->School->simce_average_projection($school_id, $year);
 
-				$index =	(100 / $average_price)*$weights['price'] + 
-							(100 * $distance) * $weights['ubication'] + 
-							$simce_average_projection * $weights['simce'] + 
-							$psu_average_projection * $weights['psu'];
+				$index =	1000000 / $average_price * $weights['price'] + 
+							$distance * $weights['ubication'] + 
+							$simce_average_projection / 10 * $weights['simce'] + 
+							$psu_average_projection / 10 * $weights['psu'];
 
 				$indexes[$school['School']['id']]['index'] = $index;
 				$indexes[$school['School']['id']]['average_price'] = round($average_price,0);
