@@ -39,58 +39,8 @@
 
 <body>
 	<div class="container">
-		<center>
-			<h1 style="margin: 40px 0px;">
-				<img src="/img/logo.png" alt="Presupuestate beta"/><br/>
-				<small style="font-size:15px;">Ingresa los siguientes datos para generar tu <b>presupuesto</b></small>
-			</h1>
-		</center>
-		<form id="principalForm" class="span10">
-			<div id="monthlyIncome" class="clearfix">
-            	<label for="xlInput">Ingreso mensual</label>
-            	<div class="input">
-            	  <input type="text" size="30" name=""  placeholder="Ingreso mensual" class="xlarge" rel="monthlyIncome">
-            	</div>
-          	</div>	
-			<div id="family" class="clearfix">
-            	<label for="xlInput">Integrantes de la familia</label>
-            	<div class="input">
-					<select class="xlarge" rel="family">
-						<option value="0">Ingresa los integrantes de tu familia</option>
-						<option value="2">holi</option>
-					</select>
-            	</div>
-          	</div>	
-			<div id="unication" class="clearfix">
-            	<label for="xlInput">Selecciona ubicación</label>
-            	<div class="input">
-					<select class="xlarge" rel="ubication">
-						<option value="0">Selecciona ubicación</option>
-						<option value="2">holi</option>
-					</select>
-            	</div>
-          	</div>	
-			<div id="university" class="clearfix">
-            	<label for="">Selecciona universidad</label>
-            	<div class="input">
-					<select class="xlarge" rel="university">
-						<option value="0">Selecciona universidad</option>
-						<option value="2">holi</option>
-					</select>
-            	</div>
-          	</div>	
-			<div id="degree" class="clearfix">
-            	<label for="">Selecciona carrera</label>
-            	<div class="input">
-					<select rel="degree" class="xlarge">
-						<option value="0">Selecciona carrera</option>
-						<option value="2">holi</option>
-					</select>
-            	</div>
-          	</div>	
+	<? echo $content_for_layout; ?>
 
-          	<input type="button" id="sendRequest" value="Presupuestate" class="btn large info"/>
-		</form>
 	</div>
 	
 <script type="text/javascript">
@@ -118,7 +68,6 @@
 
 	});
 </script>
-	<?// echo $content_for_layout; ?>
 	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>

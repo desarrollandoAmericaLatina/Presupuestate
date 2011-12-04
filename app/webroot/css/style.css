@@ -26,3 +26,18 @@ label{
 #principalForm input[type"text"]{
 	color:#999;
 }
+
+.educationItem{
+	padding:5px;
+	background-color: #ddd;
+	color:#999;
+}
+
+	.educationItem.active{
+		background-color: #f9b103;
+		color:#fff;
+	}
+
+.itemContainer{
+	display:none;
+}
