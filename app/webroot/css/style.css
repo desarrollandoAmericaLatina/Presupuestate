@@ -1,6 +1,8 @@
 body{
 	background-image:url('../img/background.png');
 	background-position:top center;
+	background-color:#b2b3b1;
+	background-repeat: no-repeat;
 }
 
 #principalForm{
@@ -83,16 +85,17 @@ label{
 	    height: 62px;
 	    margin: 5px;
 	    width: 120px;
-		-webkit-box-shadow: inset 1px 1px 15px 1px #cccccc;
-		-moz-box-shadow: inset 1px 1px 15px 1px #cccccc;
-		box-shadow: inset 1px 1px 15px 1px #cccccc; 
+		-webkit-box-shadow: inset 1px 1px 15px 1px #999;
+		-moz-box-shadow: inset 1px 1px 15px 1px #999;
+		box-shadow: inset 1px 1px 15px 1px #999; 
 		-webkit-border-radius: 9px;
 		-moz-border-radius: 9px;
 		border-radius: 9px; 
+		background-image:url('../img/trans.png');
 	}
 
 	.itemData .content{
-		color:#c3bfbf;
+		color:#666;
 		font-size:30px;
 		text-align: center;
 		width:100%;
@@ -117,16 +120,16 @@ label{
 	    height: 62px;
 	    margin: 5px;
 	    width: 117px;
-		-webkit-box-shadow: inset 1px 1px 15px 1px #b5b5b5;
-		-moz-box-shadow: inset 1px 1px 15px 1px #b5b5b5;
-		box-shadow: inset 1px 1px 15px 1px #b5b5b5; 
+		-webkit-box-shadow: inset 1px 1px 15px 1px #999;
+		-moz-box-shadow: inset 1px 1px 15px 1px #999;
+		box-shadow: inset 1px 1px 15px 1px #999; 
 		-webkit-border-radius: 9px;
 		-moz-border-radius: 9px;
 		border-radius: 9px; 
 	}
 
 	.itemData.big .content{
-		color:#999;
+		color:#666;
 		font-size:30px;
 		text-align: center;
 		width:100%;
@@ -154,9 +157,9 @@ label{
    
 .ubication .mapa{
 	border:3px solid #fff;	
-	-webkit-box-shadow: 1px 1px 5px 1px #ccc;
-	-moz-box-shadow: 1px 1px 5px 1px #ccc;
-	box-shadow: 1px 1px 5px 1px #ccc; 
+	-webkit-box-shadow: 1px 1px 5px 1px #999;
+	-moz-box-shadow: 1px 1px 5px 1px #999;
+	box-shadow: 1px 1px 5px 1px #999; 
 	float:left;
 	margin:5px;
 }
@@ -174,9 +177,9 @@ label{
 }
 
 .incomeBox{
-	-webkit-box-shadow: inset 1px 1px 15px 1px #cccccc;
-	-moz-box-shadow: inset 1px 1px 15px 1px #cccccc;
-	box-shadow: inset 1px 1px 15px 1px #cccccc; 
+	-webkit-box-shadow: inset 1px 1px 15px 1px #999;
+	-moz-box-shadow: inset 1px 1px 15px 1px #999;
+	box-shadow: inset 1px 1px 15px 1px #999; 
 	-webkit-border-radius: 9px;
 	-moz-border-radius: 9px;
 	border-radius: 9px; 

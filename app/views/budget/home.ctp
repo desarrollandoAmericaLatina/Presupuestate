@@ -62,7 +62,24 @@
 		
 		
 <script type="text/javascript">
+
 	$(document).ready(function(){
+	function getDegree(id) {
+		$('#loader').show();
+		$.ajax({
+				url: "/budget/getDegree/" + id,
+				type: "POST",
+				dataType: "json",
+				success: function(data) {
+					$('#degree_select').html("");
+					$('#degree_select').append($("<option> </option>").attr("value",0).text('Selecciona una carrera'));
+					$.each(data, function(key, value) {
+			            $('#degree_select').append($("<option> </option>").attr("value",key).text(value));
+				       	$('#loader').fadeOut();
+			        });
+				}
+			});
+	}
 		$('input[type="text"]').val('');
 		$('select').val('0');
 		
@@ -135,24 +152,7 @@
 			$('#principalForm ').submit();
 		});
 
-
-
 	});
 	
-	function getDegree(id) {
-		$('#loader').show();
-		$.ajax({
-				url: "/budget/getDegree/" + id,
-				type: "POST",
-				dataType: "json",
-				success: function(data) {
-					$('#degree_select').html("");
-					$('#degree_select').append($("<option></option>").attr("value",0).text('Selecciona una carrera'));
-					$.each(data, function(key, value) {
-			            $('#degree_select').append($("<option></option>").attr("value",key).text(value));
-				       	$('#loader').fadeOut();
-			        });
-				}
-			});
-	}
+
 </script>
