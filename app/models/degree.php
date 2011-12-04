@@ -2,7 +2,14 @@
 class Degree extends AppModel {
 	var $name = 'Degree';
 	var $displayField = 'name';
+	var $belongsTo = array(
+		"College"
+	);
 
+	var $hasMany = array(
+		"DegreesPrice"
+	);
+	
 	function getByCollegeId($id) {
 		$data = $this->find('list',
 			array(
