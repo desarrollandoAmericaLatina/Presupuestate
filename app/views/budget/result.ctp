@@ -6,8 +6,8 @@
 
 <div class="span9" style="border-right:1px dotted #ccc; float: left;margin-right: 5px;padding-right: 9px;width: 510px !important;">
 	<h3><img src="/img/161-calculator.png"/>Presupuesto educacional</h3>
-	<div class="incomeBox">
-		<b>El arancel estimado es de <span class="income pull-right">$14.450.078</span> </b>
+	<div class="incomeBox dark">
+		<b>El costo estimado de la carrera <span class="income pull-right">$14.450.078</span> </b>
 	</div>
 	<div class="incomeBox">
 		<b>Para alcanzar esta meta debes ahorrar mensualmente<span class="save pull-right">$1.000.000</span> </b>
@@ -41,7 +41,7 @@
 
 <div class="span7" style="float:left;">
 	<h3><img src="/img/28-star.png"/>Colegios recomendados</h3>
-	<div class="educationItem active clearfix">
+	<div class="educationItem clearfix">
 		Nombre del colegio
 		<div class="indicator"></div>
 	</div>	
@@ -64,7 +64,6 @@
 			<span class="content">950</span>		
 			<span class="title">Puntaje PSU</span>
 		</div>
-		<hr/>
 	</div>
 	<div class="educationItem clearfix">
 		Nombre del colegio
@@ -95,7 +94,6 @@
 			<span class="content">950</span>		
 			<span class="title">Puntaje PSU</span>
 		</div>
-		<hr/>
 	</div>
 	<div class="educationItem clearfix">
 		Nombre del colegio
@@ -120,14 +118,17 @@
 			<span class="content">950</span>		
 			<span class="title">Puntaje PSU</span>
 		</div>
-		<hr/>
+	</div>
+	<div id="colofon">
+		<h2><img src="/img/09-chat-2.png"/>¿Necesitas ayuda?</h2>
+		<p> Cualquier duda o consulta contactate al correo <b>contacto[at]presupuestate.com</b></p>
 	</div>
 </div>
 
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('.itemContainer:first').show();
+		//$('.itemContainer:first').show();
 		$('.educationItem').click(function(){
 			$('.itemContainer').slideUp('fast');
 			$(this).next().slideDown('fast');

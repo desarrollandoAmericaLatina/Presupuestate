@@ -182,11 +182,22 @@ label{
 	border-radius: 9px; 
 	padding: 10px;
 	margin-bottom: 15px;
+	border:1px solid #b4b4b3;
+}
+
+.incomeBox.dark{
+	-webkit-box-shadow: inset 1px 1px 15px 1px #f9b103;
+	-moz-box-shadow: inset 1px 1px 15px 1px #f9b103;
+	box-shadow: inset 1px 1px 15px 1px #f9b103; 
+	background-color:#f9b103;
+	border:1px solid #eea903;
 }
 
 .income{
 	font-size: 25px;
-	color:#f9b103;
+	color:#fff;
+	text-shadow: 1px 1px 1px #000000;
+	filter: dropshadow(color=#000000, offx=1, offy=1);
 }
 
 .save{
@@ -210,15 +221,41 @@ label{
 	border-radius: 9px; 
 }
 
-h3 img{
-    float: left;
-    margin-right: 10px;
-    margin-top: 6px;
-    width: 18px;
+h3{
+	margin-bottom: 20px;
 }
+	
+	h3 img{
+	    float: left;
+	    margin-right: 10px;
+	    margin-top: 6px;
+	    width: 18px;
+	}
 
 h5 img{
     float: left;
     margin-right: 10px;
     margin-top: 6px;
+}
+
+h2 img{
+    float: left;
+    margin-right: 10px;
+    margin-top: 12px;
+    width:20px;
+}
+
+#colofon{
+	margin-top:20px;
+	float:left;
+}
+
+	#colofon h2{
+		color:#6d6d6d;
+		font-size: 18px;
+	}
+
+#colofon p{
+	color:#7a7a79;
+	margin-left: 30px;
 }
