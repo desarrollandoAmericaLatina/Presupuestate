@@ -29,9 +29,16 @@ label{
 
 .educationItem{
 	padding:5px;
-	background-color: #ddd;
+	background-color: #eee;
 	color:#999;
+	border-bottom:1px solid #c7c7c6;
+	cursor:pointer;
 }
+
+	.educationItem:hover{
+		background-color:#ddd;
+		color:#666;
+	}
 
 	.educationItem.active{
 		background-color: #f9b103;
