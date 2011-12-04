@@ -32,7 +32,11 @@ label{
 	background-color: #eee;
 	color:#999;
 	border-bottom:1px solid #c7c7c6;
+	border-top:1px solid #c7c7c6;
 	cursor:pointer;
+	width:390px;
+	float:left;
+	margin-top: -1px;
 }
 
 	.educationItem:hover{
@@ -47,4 +51,92 @@ label{
 
 .itemContainer{
 	display:none;
+	padding:5px;
+	padding-bottom: 20px;	
+}
+
+	.itemData{
+	    float: left;
+	    height: 62px;
+	    margin: 5px;
+	    width: 120px;
+		-webkit-box-shadow: inset 1px 1px 15px 1px #cccccc;
+		-moz-box-shadow: inset 1px 1px 15px 1px #cccccc;
+		box-shadow: inset 1px 1px 15px 1px #cccccc; 
+		-webkit-border-radius: 9px;
+		-moz-border-radius: 9px;
+		border-radius: 9px; 
+	}
+
+	.itemData .content{
+		color:#c3bfbf;
+		font-size:30px;
+		text-align: center;
+		width:100%;
+		float:left;
+		margin-bottom: 15px;
+		margin-top:10px;
+
+	}
+	
+	.itemData .title{
+		text-align: center;
+		width:100%;
+		float:left;
+    	float: left;
+    	margin-top: -5px;
+    	text-align: center;
+    	width: 100%;	
+    }
+   
+.ubication{
+	display: block;
+	float:left;
+	margin-bottom: 10px;
+}
+   
+.ubication .mapa{
+	border:3px solid #fff;	
+	-webkit-box-shadow: 1px 1px 5px 1px #ccc;
+	-moz-box-shadow: 1px 1px 5px 1px #ccc;
+	box-shadow: 1px 1px 5px 1px #ccc; 
+	float:left;
+	margin:5px;
+}
+
+.ubication .information{
+	float: left;
+	margin-left: 10px;
+}
+
+.ubicationItem{
+	border-bottom:1px solid #ccc;
+	width:260px;
+	padding: 3px 0px;
+	float: left;
+}
+
+.incomeBox{
+	-webkit-box-shadow: inset 1px 1px 15px 1px #cccccc;
+	-moz-box-shadow: inset 1px 1px 15px 1px #cccccc;
+	box-shadow: inset 1px 1px 15px 1px #cccccc; 
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px; 
+	padding: 10px;
+	margin-bottom: 15px;
+}
+
+.income{
+	font-size: 25px;
+	color:#f9b103;
+}
+
+.save{
+	font-size: 20px;
+	color:#939392;
+}
+
+#universityInfo{
+	border-top:1px solid #c2c2c2;
 }
