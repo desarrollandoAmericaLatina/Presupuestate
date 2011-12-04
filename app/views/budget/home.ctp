@@ -1,7 +1,7 @@
 		<center>
 			<h1 style="margin: 40px 0px;">
 				<a href="/"><img src="/img/logo.png" alt="Presupuestate beta"/></a><br/>
-				<small style="font-size:15px;">Ingresa los siguientes datos para generar tu <b>presupuesto</b></small>
+				<small style="font-size:15px;">Presupuestate es una aplicación de planificación y ahorro a largo plazo para poder optar a una carrera universitaria en el futuro.<br/><b>Ingresa los datos y encuentra tu presupuesto!</b></small>
 			</h1>
 		</center>
 		<form id="principalForm" class="span10" action="budget/dataProcess" method="post">
@@ -11,7 +11,7 @@
             	  <input type="text" size="30" name="data[Recipe][budget]"  placeholder="Ingreso mensual" class="xlarge" rel="monthlyIncome"  >
             	</div>
           	</div>	
-			<div id="family" class="clearfix">
+			<div id="family" class="clearfix" style="display:none;">
             	<label for="xlInput" class="label notice">Integrantes de la familia</label>
             	<div class="input">
 					<select class="xlarge" rel="family"  name="data[Recipe][family_nr]">
@@ -56,6 +56,7 @@
           	</div>	
 
           	<input type="submit" id="sendRequest" value="Presupuestate" class="btn large info"/>
+          	
 			<img style="margin-left:270px; display: none;" src="/img/loader_.gif" id="loader_"/>
 
 		</form>
@@ -125,7 +126,7 @@
 
 			}
 			
-			if($('#principalForm select[rel="family"]').val()=="0"){
+			/*if($('#principalForm select[rel="family"]').val()=="0"){
 				$('#family').addClass('error_form');
 				$('#family select').addClass('error');
 				$('#family label').removeClass('notice').addClass('important');
@@ -134,7 +135,7 @@
 				$('#family').removeClass('error_form');
 				$('#family select').removeClass('error');
 				$('#family label').removeClass('important').addClass('notice');
-			}
+			}*/
 			
 			if($('#principalForm select[rel="ubication"]').val()=="0"){
 				$('#ubication').addClass('error_form');
