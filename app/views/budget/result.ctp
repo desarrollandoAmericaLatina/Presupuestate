@@ -1,6 +1,6 @@
 <center>
 	<h1 style="margin: 40px 0px;">
-		<img src="/img/logo.png" alt="Presupuestate beta"/><br/>
+		<a href="/"><img src="/img/logo.png" alt="Presupuestate beta"/></a><br/>
 	</h1>
 </center>
 

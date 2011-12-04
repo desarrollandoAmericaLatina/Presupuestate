@@ -1,6 +1,6 @@
 		<center>
 			<h1 style="margin: 40px 0px;">
-				<img src="/img/logo.png" alt="Presupuestate beta"/><br/>
+				<a href="/"><img src="/img/logo.png" alt="Presupuestate beta"/></a><br/>
 				<small style="font-size:15px;">Ingresa los siguientes datos para generar tu <b>presupuesto</b></small>
 			</h1>
 		</center>
