@@ -48,9 +48,9 @@ class SchoolController extends AppController {
 			if (preg_match("/Comuna:/", $line)) {
 				$current_key = 'comuna';
 			}
-		/*	if (preg_match("/Tel.fono:/", $line)) {
+			if (preg_match("|Tel.fono:\\<|U", $line)) {
 				$current_key = 'telefono';
-		} */
+			} 
 			if (preg_match("/E-mail contacto:/", $line)) {
 				$current_key = 'email';
 			}

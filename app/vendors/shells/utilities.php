@@ -142,6 +142,8 @@ class UtilitiesShell extends Shell {
 			$school['School']['address'] = $info['direccion'];
 			$school['School']['city'] = $info['comuna'];
 			$school['School']['email'] = $info['email'];
+			$school['School']['phone'] = $info['telefono'];
+			$school['School']['dependency'] = $info['dependencia'];
 			$school['School']['psu_function'] = $psu_function;
 			$school['School']['simce_function'] = $simce_function;
 			$school['School']['price_function'] = $school_prices_function;
