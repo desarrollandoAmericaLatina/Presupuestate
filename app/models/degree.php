@@ -19,7 +19,8 @@ class Degree extends AppModel {
 		eval($math);
 
 		return $result;	
-	
+	}
+
 	function getByCollegeId($id) {
 		$data = $this->find('list',
 			array(
