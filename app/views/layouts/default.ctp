@@ -43,7 +43,7 @@
 		<? echo $content_for_layout; ?>
 		<footer class="container" style="border-top: none; width:100%; float:left;" >
 			<small class="pull-right">
-				powered by <b><a href="http://www.weebls-stuff.com/songs/Tamale/" target="blank_" style="color:#666;">TACHANGOU</a></b>
+				powered by <b><a href="http://www.weebls-stuff.com//flash/397_tamale.swf" target="blank_" style="color:#666;">TACHANGOU</a></b>
 			</small>
 		</footer>	
 
