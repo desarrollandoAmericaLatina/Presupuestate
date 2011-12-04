@@ -1,6 +1,6 @@
 <center>
 	<h1 style="margin: 40px 0px;">
-		<img src="/img/logo.png" alt="Presupuestate beta"/><br/>
+		<a href="/"><img src="/img/logo.png" alt="Presupuestate beta"/></a><br/>
 	</h1>
 </center>
 <!--<? pr($college);?>-->
@@ -13,11 +13,12 @@
 		<b>Para alcanzar esta meta debes ahorrar mensualmente<span class="save pull-right">$<?=number_format($college['monthly_save'], 0, ",", ".");?><</span> </b>
 	</div>
 	<div class="clearfix">
-		<div class="clearfix" id="incomeInformationChart" style="display:none;">
+		<div class="clearfix" id="incomeInformationChart">
+			<h5>Gráfico de proyección</h5><br/>
 			<img src="<?=$college['img_chart'];?>"/>
 			<img src="/img/indice.png"/>
 		</div>
-		<a href="#" style="font-weight: normal;" id="viewChart" class="pull-right btn secondary small">Ver analisis de presupuesto</a>
+		<a href="#" style="font-weight: normal;" id="viewChart" class="pull-right btn secondary small">Gráfico de proyección</a>
 	</div>
 
 	<div id="universityInfo">
@@ -47,14 +48,23 @@
 	<h3><img src="/img/28-star.png"/>Colegios recomendados</h3>
 	<?foreach($schools as $s): ?>
 	<div class="educationItem clearfix">
-		<?=$s['data']['School']['name']?>
+		<?=$s['data']['School']['name']?> - <small><?=$s['data']['School']['city']?></small>
 		<div class="indicator"></div>
 	</div>	
 	<div class="itemContainer clearfix">
 		<div class="ubication">
-			<img class="mapa" src="http://maps.google.com/maps/api/staticmap?center=Williamsbur&zoom=13&size=100x100&markers=color:blue&sensor=false"/>
+			<img class="mapa" src="http://maps.google.com/maps/api/staticmap?center=<?=$s['data']['School']['address']?>,<?=$s['data']['School']['city']?>,chile&zoom=15&size=100x100&sensor=false&markers=color:blue|<?=$s['data']['School']['address']?>,<?=$s['data']['School']['city']?>,chile"/>
 			<div class="information">
-				<span class="ubicationItem"><?=$s['data']['School']['address']?>, <?=$s['data']['School']['city']?></span>
+				<span class="ubicationItem"><?=$s['data']['School']['address']?></span>
+			</div>
+			<div class="information">
+				<span class="ubicationItem">Teléfono : <?=$s['data']['School']['phone']?></span>
+			</div>
+			<div class="information">
+				<span class="ubicationItem">Email : <a style="text-decoration: none; color:#666;" href="mailto:<?=$s['data']['School']['email']?>" alt="contactar"><?=$s['data']['School']['email']?></a></span>
+			</div>
+			<div class="information">
+				<span class="ubicationItem">Dependencia : <?=$s['data']['School']['dependency']?></span>
 			</div>
 		</div>
 		<div class="itemData clearfix">
@@ -62,29 +72,26 @@
 			<span class="title">Mensualidad</span>
 		</div>
 		<div class="itemData clearfix">
-			<span class="content">$<?=$s['simce_average_projection']?></span>		
+			<span class="content"><?=$s['simce_average_projection']?></span>		
 			<span class="title">% SIMCE</span>
 		</div>
 		<div class="itemData clearfix">
-			<span class="content">$<?=$s['psu_average_projection']?></span>		
+			<span class="content"><?=$s['psu_average_projection']?></span>		
 			<span class="title">Puntaje PSU</span>
 		</div>
 	</div>
 	<?endforeach;?>
 	<div id="colofon">
 		<h2><img src="/img/09-chat-2.png"/>¿Necesitas ayuda?</h2>
-		<p> Cualquier duda o consulta contactate al correo <b>contacto[at]presupuestate.com</b></p>
+		<p> Cualquier duda o consulta contactate al correo <b>contacto[at]presupuestate[dot]com</b></p>
 	</div>
 </div>
 
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		//$('.itemContainer:first').show();
-		
-		$('')
-		
-		
+		$('.itemContainer:first').show();
+		$('.educationItem:first').addClass('active');
 		$('.educationItem').click(function(){
 			$('.itemContainer').slideUp('fast');
 			$(this).next().slideDown('fast');

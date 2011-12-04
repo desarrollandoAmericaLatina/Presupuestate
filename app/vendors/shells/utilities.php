@@ -45,10 +45,10 @@ class UtilitiesShell extends Shell {
 			if (preg_match("/Comuna:/", $line)) {
 				$current_key = 'comuna';
 			}
-		/*	if (preg_match("/Tel.fono:/", $line)) {
+			if (preg_match("|Tel.fono:\\<|U", $line)) {
 				$current_key = 'telefono';
-		} */
-			if (preg_match("/E-mail contacto:/", $line)) {
+			} 
+				if (preg_match("/E-mail contacto:/", $line)) {
 				$current_key = 'email';
 			}
 	
@@ -142,6 +142,8 @@ class UtilitiesShell extends Shell {
 			$school['School']['address'] = $info['direccion'];
 			$school['School']['city'] = $info['comuna'];
 			$school['School']['email'] = $info['email'];
+			$school['School']['phone'] = $info['telefono'];
+			$school['School']['dependency'] = $info['dependencia'];
 			$school['School']['psu_function'] = $psu_function;
 			$school['School']['simce_function'] = $simce_function;
 			$school['School']['price_function'] = $school_prices_function;
