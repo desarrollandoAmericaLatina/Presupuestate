@@ -5,11 +5,19 @@ class BudgetController extends AppController {
 	var $uses = array('School', 'College', 'Degree', 'Location');
 
 	function result() {
-		
-
-
-
-
+		$schoolData = $this->Session->read('schoolData');
+		$schools = array();
+		if(!empty($schoolData)) {
+			foreach($schoolData as $k => $v) {
+				$schools[$k]['data'] = $this->School->find('first', array('conditions' => array('School.id' => $k)));
+				$schools[$k]['price'] = $v['average_price'];
+				$schools[$k]['simce_average_projection'] = $v['simce_average_projection'];
+				$schools[$k]['psu_average_projection'] = $v['psu_average_projection'];
+			}
+		} else {
+			$this->redirect('/');
+		}
+		$this->set('schools', $schools);
 	}
 	
 	function home() {
@@ -26,18 +34,23 @@ class BudgetController extends AppController {
 	}
 	
 	function dataProcess() {
-		$schoolData = $this->schoolProcess($this->data['Recipe']['budget'],$this->data['Recipe']['family_nr'],$this->data['Recipe']['location'],$this->data['Recipe']['college'], $this->data['Recipe']['degree']);
-		die;
+		//$schoolData = $this->schoolProcess($this->data['Recipe']['budget'],$this->data['Recipe']['family_nr'],$this->data['Recipe']['location'],$this->data['Recipe']['college'], $this->data['Recipe']['degree']);
+		
+		$schoolData = $this->schoolProcess(1231233,8,9,1,1);
+		$this->Session->write('schoolData', $schoolData);
+		$this->redirect(array('controller' => 'budget', 'action' => 'result'));
 	}
 	
 	function schoolProcess($budget,$family_nr, $location, $college, $degree) {
 		$a = microtime(true);
+		
+		$loc = $this->Location->find('first', array('conditions' => array('Location.id' => $location)));
 
 		$ubication = array(
 			"Ubication" => array(
-				"id" => 1,
-				"latitude" => 12.12121212,
-				"longitude" => 12.12121212
+				"id" => $loc['Location']['id'],
+				"latitude" => $loc['Location']['lat'],
+				"longitude" => $loc['Location']['lng']
 			)
 		);
 
@@ -56,11 +69,6 @@ class BudgetController extends AppController {
 			"simce" => 8,
 			"psu" => 10,
 		);
-
-		if(empty($this->data)) {
-			$this->redirect("/");
-		}
-
 
 		$recommends = array();
 		
@@ -81,7 +89,7 @@ class BudgetController extends AppController {
 		);
 		foreach($schools as $school) {
 			$school_id = $school['School']['id'];
-			echo "entrando a $school_id, tiempo de ejecucion: ".(microtime(true) - $a)."s.<br />";
+			//echo "entrando a $school_id, tiempo de ejecucion: ".(microtime(true) - $a)."s.<br />";
 
 			$psu_average_projection = $this->School->psu_average_projection($school_id, $year);
 
@@ -101,14 +109,15 @@ class BudgetController extends AppController {
 							$simce_average_projection * $weights['simce'] + 
 							$psu_average_projection * $weights['psu'];
 
-				$indexes[$school['School']['id']] = $index;
+				$indexes[$school['School']['id']]['index'] = $index;
+				$indexes[$school['School']['id']]['average_price'] = round($average_price,0);
+				$indexes[$school['School']['id']]['simce_average_projection'] = round($simce_average_projection,0);
+				$indexes[$school['School']['id']]['psu_average_projection'] = round($psu_average_projection,0);
 			}
 		}
 
 		asort($indexes);
-
-
-		pr($indexes);
+ 		return $indexes;
 	}
 }
 ?>

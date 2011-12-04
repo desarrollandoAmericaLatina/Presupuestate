@@ -45,84 +45,32 @@
 
 <div class="span7" style="float:left;">
 	<h3><img src="/img/28-star.png"/>Colegios recomendados</h3>
+	<?foreach($schools as $s): ?>
 	<div class="educationItem clearfix">
-		Nombre del colegio
+		<?=$s['data']['School']['name']?>
 		<div class="indicator"></div>
 	</div>	
 	<div class="itemContainer clearfix">
 		<div class="ubication">
 			<img class="mapa" src="http://maps.google.com/maps/api/staticmap?center=Williamsbur&zoom=13&size=100x100&markers=color:blue&sensor=false"/>
 			<div class="information">
-				<span class="ubicationItem">Av. Grecia 22, Peñalolen</span>
+				<span class="ubicationItem"><?=$s['data']['School']['address']?>, <?=$s['data']['School']['city']?></span>
 			</div>
 		</div>
 		<div class="itemData clearfix">
-			<span class="content" style="font-size:25px;">$120.000</span>		
+			<span class="content" style="font-size:25px;">$<?=$s['price']?></span>		
 			<span class="title">Mensualidad</span>
 		</div>
 		<div class="itemData clearfix">
-			<span class="content">400</span>		
+			<span class="content">$<?=$s['simce_average_projection']?></span>		
 			<span class="title">% SIMCE</span>
 		</div>
 		<div class="itemData clearfix">
-			<span class="content">950</span>		
+			<span class="content">$<?=$s['psu_average_projection']?></span>		
 			<span class="title">Puntaje PSU</span>
 		</div>
 	</div>
-	<div class="educationItem clearfix">
-		Nombre del colegio
-		<div class="indicator"></div>
-	</div>	
-	<div class="itemContainer clearfix">
-		<div class="ubication">
-			<img class="mapa" src="http://maps.google.com/maps/api/staticmap?center=Williamsbur&zoom=13&size=100x100&markers=color:blue&sensor=false"/>
-			<div class="information">
-				<span class="ubicationItem">Av. Grecia 22, Peñalolen</span>
-			</div>
-			<div class="information">
-				<span class="ubicationItem">Av. Grecia 22, Peñalolen</span>
-			</div>
-			<div class="information">
-				<span class="ubicationItem">Av. Grecia 22, Peñalolen</span>
-			</div>
-		</div>
-		<div class="itemData clearfix">
-			<span class="content" style="font-size:25px;">$120.000</span>		
-			<span class="title">Mensualidad</span>
-		</div>
-		<div class="itemData clearfix">
-			<span class="content">400</span>		
-			<span class="title">% SIMCE</span>
-		</div>
-		<div class="itemData clearfix">
-			<span class="content">950</span>		
-			<span class="title">Puntaje PSU</span>
-		</div>
-	</div>
-	<div class="educationItem clearfix">
-		Nombre del colegio
-		<div class="indicator"></div>
-	</div>	
-	<div class="itemContainer clearfix">
-		<div class="ubication">
-			<img class="mapa" src="http://maps.google.com/maps/api/staticmap?center=Williamsbur&zoom=13&size=100x100&markers=color:blue&sensor=false"/>
-			<div class="information">
-				<span class="ubicationItem">Av. Grecia 22, Peñalolen</span>
-			</div>
-		</div>
-		<div class="itemData clearfix">
-			<span class="content" style="font-size:25px;">$120.000</span>		
-			<span class="title">Mensualidad</span>
-		</div>
-		<div class="itemData clearfix">
-			<span class="content">400</span>		
-			<span class="title">% SIMCE</span>
-		</div>
-		<div class="itemData clearfix">
-			<span class="content">950</span>		
-			<span class="title">Puntaje PSU</span>
-		</div>
-	</div>
+	<?endforeach;?>
 	<div id="colofon">
 		<h2><img src="/img/09-chat-2.png"/>¿Necesitas ayuda?</h2>
 		<p> Cualquier duda o consulta contactate al correo <b>contacto[at]presupuestate.com</b></p>
