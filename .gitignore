@@ -3,3 +3,5 @@
 /app/tmp
 /plugins
 /vendors
+*.swp
+.DS_STORE
