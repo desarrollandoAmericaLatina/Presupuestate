@@ -52,9 +52,18 @@
 	</div>	
 	<div class="itemContainer clearfix">
 		<div class="ubication">
-			<img class="mapa" src="http://maps.google.com/maps/api/staticmap?center=Williamsbur&zoom=13&size=100x100&markers=color:blue&sensor=false"/>
+			<img class="mapa" src="http://maps.google.com/maps/api/staticmap?center=<?=$s['data']['School']['address']?>,<?=$s['data']['School']['city']?>,chile&zoom=15&size=100x100&markers=color:blue&sensor=false&markers=color:orange|<?=$s['data']['School']['address']?>,<?=$s['data']['School']['city']?>,chile"/>
 			<div class="information">
 				<span class="ubicationItem"><?=$s['data']['School']['address']?>, <?=$s['data']['School']['city']?></span>
+			</div>
+			<div class="information">
+				<span class="ubicationItem"><?=$s['data']['School']['phone']?></span>
+			</div>
+			<div class="information">
+				<span class="ubicationItem"><?=$s['data']['School']['email']?></span>
+			</div>
+			<div class="information">
+				<span class="ubicationItem"><?=$s['data']['School']['dependency']?></span>
 			</div>
 		</div>
 		<div class="itemData clearfix">
