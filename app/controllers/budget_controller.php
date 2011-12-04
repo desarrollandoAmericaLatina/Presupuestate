@@ -2,7 +2,7 @@
 class BudgetController extends AppController {
 
 	var $name = 'Budget';
-	var $uses = array('School', 'College', 'Degree');
+	var $uses = array('School', 'College', 'Degree', 'Location');
 
 	function result() {
 	
@@ -10,7 +10,9 @@ class BudgetController extends AppController {
 	
 	function home() {
 		$college = $this->College->getAll();	
+		$locations = $this->Location->getLocation();
 		$this->set('college',$college);
+		$this->set('location',$locations);
 	}
 	
 	function getDegree($id) {
