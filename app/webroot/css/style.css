@@ -1,0 +1,28 @@
+body{
+	background-image:url('../img/background.png');
+	background-position:top center;
+}
+
+#principalForm{
+	margin:0 auto;
+}
+
+#sendRequest{
+	margin-left: 185px;
+	margin-top:40px;
+}
+
+label{
+	width:140px;
+	position: absolute;
+	color:#6aa128;
+	display:none;
+}
+
+#principalForm select[value="0"]{
+	color:#BFBFBF;
+}
+
+#principalForm input[type"text"]{
+	color:#999;
+}
