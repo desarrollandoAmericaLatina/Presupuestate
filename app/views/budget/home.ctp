@@ -6,13 +6,13 @@
 		</center>
 		<form id="principalForm" class="span10" action="budget/dataProcess" method="post">
 			<div id="monthlyIncome" class="clearfix">
-            	<label for="xlInput">Ingreso mensual</label>
+            	<label for="xlInput" class="label notice">Ingreso mensual</label>
             	<div class="input">
             	  <input type="text" size="30" name="data[Recipe][budget]"  placeholder="Ingreso mensual" class="xlarge" rel="monthlyIncome"  >
             	</div>
           	</div>	
 			<div id="family" class="clearfix">
-            	<label for="xlInput">Integrantes de la familia</label>
+            	<label for="xlInput" class="label notice">Integrantes de la familia</label>
             	<div class="input">
 					<select class="xlarge" rel="family"  name="data[Recipe][family_nr]">
 						<option value="0">Ingresa los integrantes de tu familia</option>
@@ -24,7 +24,7 @@
             	</div>
           	</div>	
 			<div id="ubication" class="clearfix">
-            	<label for="xlInput">Ubicación</label>
+            	<label for="xlInput" class="label notice">Ubicación</label>
             	<div class="input">
 					<select class="xlarge" rel="ubication" name="data[Recipe][location]">
 						<option value="0">Selecciona ubicación</option>
@@ -35,7 +35,7 @@
             	</div>
           	</div>	
 			<div id="university" class="clearfix">
-            	<label for="">Universidad</label>
+            	<label for="" class="label notice">Universidad</label>
             	<div class="input">
 					<select class="xlarge" id="college" rel="university" name="data[Recipe][college]">
 						<option value="0">Selecciona universidad</option>
@@ -46,7 +46,7 @@
             	</div>
           	</div>	
 			<div id="degree" class="clearfix">
-            	<label for="">Carrera</label>
+            	<label for="" class="label notice">Carrera</label>
             	<div class="input">
 					<select rel="degree" id="degree_select" class="xlarge clearfix" name="data[Recipe][degree]">
 						<option value="0">Selecciona carrera</option>
@@ -56,6 +56,8 @@
           	</div>	
 
           	<input type="submit" id="sendRequest" value="Presupuestate" class="btn large info"/>
+			<img style="margin-left:270px; display: none;" src="/img/loader_.gif" id="loader_"/>
+
 		</form>
 
 		
@@ -66,6 +68,7 @@
 	$(document).ready(function(){
 	function getDegree(id) {
 		$('#loader').show();
+		$('#degree_select').attr('disabled','disabled')
 		$.ajax({
 				url: "/budget/getDegree/" + id,
 				type: "POST",
@@ -75,7 +78,9 @@
 					$('#degree_select').append($("<option> </option>").attr("value",0).text('Selecciona una carrera'));
 					$.each(data, function(key, value) {
 			            $('#degree_select').append($("<option> </option>").attr("value",key).text(value));
+						$('#degree_select').attr('disabled',false)
 				       	$('#loader').fadeOut();
+				       	
 			        });
 				}
 			});
@@ -106,50 +111,64 @@
 			e.preventDefault();
 			if($('#principalForm input[type="text"]').val()==""){
 				$('#monthlyIncome').addClass('error_form');
+				$('#monthlyIncome label').removeClass('notice').addClass('important');
 				$('#monthlyIncome input').addClass('error');
 				return false;
 			}else{
 				$('#monthlyIncome').removeClass('error_form');
 				$('#monthlyIncome input').removeClass('error');
+				$('#monthlyIncome label').removeClass('important').addClass('notice');
+
 			}
 			
 			if($('#principalForm select[rel="family"]').val()=="0"){
 				$('#family').addClass('error_form');
 				$('#family select').addClass('error');
+				$('#family label').removeClass('notice').addClass('important');
 				return false;
 			}else{
 				$('#family').removeClass('error_form');
 				$('#family select').removeClass('error');
+				$('#family label').removeClass('important').addClass('notice');
 			}
 			
 			if($('#principalForm select[rel="ubication"]').val()=="0"){
 				$('#ubication').addClass('error_form');
 				$('#ubication select').addClass('error');
+				$('#ubication label').removeClass('notice').addClass('important');
 				return false;
 			}else{
 				$('#ubication').removeClass('error_form');
 				$('#ubication select').removeClass('error');
+				$('#ubication label').removeClass('important').addClass('notice');
 			}
 			
 			if($('#principalForm select[rel="university"]').val()=="0"){
 				$('#university').addClass('error_form');
 				$('#university select').addClass('error');
+				$('#university label').removeClass('notice').addClass('important');
 				return false;
 			}else{
 				$('#university').removeClass('error_form');
 				$('#university select').removeClass('error');
+				$('#university label').removeClass('important').addClass('notice');
 			}
 						
 			if($('#principalForm select[rel="degree"]').val()=="0"){
 				$('#degree').addClass('error_form');
 				$('#degree select').addClass('error');
+				$('#degree label').removeClass('notice').addClass('important');
 				return false;
 			}else{
 				$('#degree').removeClass('error_form');
 				$('#degree select').removeClass('error');
+				$('#degree label').removeClass('important').addClass('notice');
 			}
 			
 			$('#principalForm ').submit();
+			$('#sendRequest').hide();
+			$('#loader_').show();
+					
 		});
 
 	});

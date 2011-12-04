@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms no-csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	<title>Presupuestate</title>
+
+	<link rel="shortcut icon" href="http://presupuestate.dev/img/favicon.ico" type="image/x-icon">
+	
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Le styles -->
+	<link rel="stylesheet" type="text/css" href="result_files/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="result_files/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="result_files/style.css">
+	<link rel="stylesheet" type="text/css" href="result_files/style.css">
+	<link rel="stylesheet" type="text/css" href="result_files/jquery-ui-1.html">
+	<link rel="stylesheet" type="text/css" href="result_files/jquery-ui-1.html">
+	<script type="text/javascript" src="result_files/jquery-1.js"></script>
+	<script type="text/javascript" src="result_files/jquery-ui-1.js"></script>
+	<script type="text/javascript" src="result_files/bootstrap-dropdown.js"></script>
+	<script type="text/javascript" src="result_files/bootstrap-modal.js"></script>
+	<script type="text/javascript" src="result_files/bootstrap-twipsy.js"></script>
+	<script type="text/javascript" src="result_files/bootstrap-alerts.js"></script>
+	<script type="text/javascript" src="result_files/bootstrap-popover.js"></script>
+	<script type="text/javascript" src="result_files/jquerytext.js"></script>
+	<script type="text/javascript" src="result_files/modernizr.js"></script>
+    <script>
+	var isIE = navigator.appName === 'Microsoft Internet Explorer';
+    </script>
+	
+</head>
+
+<body>
+	<div class="container">
+		<center>
+	<h1 style="margin: 40px 0px;">
+		<img src="result_files/logo.png" alt="Presupuestate beta"><br>
+	</h1>
+</center>
+
+<div class="span9" style="border-right:1px dotted #ccc; float: left;margin-right: 5px;padding-right: 9px;width: 510px !important;">
+	<h3><img src="result_files/161-calculator.png">Presupuesto educacional</h3>
+	<div class="incomeBox dark">
+		<b>El costo estimado de la carrera <span class="income pull-right">$14.450.078</span> </b>
+	</div>
+	<div class="incomeBox">
+		<b>Para alcanzar esta meta debes ahorrar mensualmente<span class="save pull-right">$1.000.000</span> </b>
+	</div>
+	<div class="clearfix">
+		<div class="clearfix" id="incomeInformationChart" style="display:none;">
+			<img src="result_files/chart.png">
+			<img src="result_files/indice.png">
+		</div>
+		<a href="#" style="font-weight: normal;" id="viewChart" class="pull-right btn secondary small">Ver analisis de presupuesto</a>
+	</div>
+
+	<div id="universityInfo">
+		<h5><img src="result_files/140-gradhat.png">Medicina / Universidad de Chile</h5>
+		<div class="itemData big clearfix">
+			<span class="content" style="font-size:23px;">$427.000</span>		
+			<span class="title">Costo estimado</span>
+		</div>
+		<div class="itemData big clearfix">
+			<span class="content">650</span>		
+			<span class="title">Estimado PSU</span>
+		</div>
+		<div class="itemData big clearfix">
+			<span class="content">650</span>		
+			<span class="title">Estimado PSU</span>
+		</div>
+		<div class="itemData big clearfix">
+			<span class="content">6</span>		
+			<span class="title">Años de duracion</span>
+		</div>
+		
+	</div>
+
+</div>
+
+<div class="span7" style="float:left;">
+	<h3><img src="result_files/28-star.png">Colegios recomendados</h3>
+		<div class="educationItem clearfix">
+		Liceo 1		<div class="indicator"></div>
+	</div>	
+	<div class="itemContainer clearfix">
+		<div class="ubication">
+			<img class="mapa" src="result_files/staticmap.png">
+			<div class="information">
+				<span class="ubicationItem">avenida cachapoal 160, rancagua</span>
+			</div>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content" style="font-size:25px;">$-33079</span>		
+			<span class="title">Mensualidad</span>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content">$186</span>		
+			<span class="title">% SIMCE</span>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content">$419</span>		
+			<span class="title">Puntaje PSU</span>
+		</div>
+	</div>
+		<div class="educationItem clearfix">
+		Liceo 3		<div class="indicator"></div>
+	</div>	
+	<div class="itemContainer clearfix">
+		<div class="ubication">
+			<img class="mapa" src="result_files/staticmap.png">
+			<div class="information">
+				<span class="ubicationItem">almarza 971, rancagua</span>
+			</div>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content" style="font-size:25px;">$-33079</span>		
+			<span class="title">Mensualidad</span>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content">$259</span>		
+			<span class="title">% SIMCE</span>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content">$477</span>		
+			<span class="title">Puntaje PSU</span>
+		</div>
+	</div>
+		<div class="educationItem clearfix">
+		Liceo 9		<div class="indicator"></div>
+	</div>	
+	<div class="itemContainer clearfix">
+		<div class="ubication">
+			<img class="mapa" src="result_files/staticmap.png">
+			<div class="information">
+				<span class="ubicationItem">cuevas 0455, rancagua</span>
+			</div>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content" style="font-size:25px;">$-33079</span>		
+			<span class="title">Mensualidad</span>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content">$288</span>		
+			<span class="title">% SIMCE</span>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content">$478</span>		
+			<span class="title">Puntaje PSU</span>
+		</div>
+	</div>
+		<div class="educationItem clearfix">
+		Liceo 10		<div class="indicator"></div>
+	</div>	
+	<div class="itemContainer clearfix">
+		<div class="ubication">
+			<img class="mapa" src="result_files/staticmap.png">
+			<div class="information">
+				<span class="ubicationItem">almarza 1013, rancagua</span>
+			</div>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content" style="font-size:25px;">$-33079</span>		
+			<span class="title">Mensualidad</span>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content">$259</span>		
+			<span class="title">% SIMCE</span>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content">$696</span>		
+			<span class="title">Puntaje PSU</span>
+		</div>
+	</div>
+		<div class="educationItem clearfix">
+		Liceo 2		<div class="indicator"></div>
+	</div>	
+	<div class="itemContainer clearfix">
+		<div class="ubication">
+			<img class="mapa" src="result_files/staticmap.png">
+			<div class="information">
+				<span class="ubicationItem">av.libertador general bernardo o`higgins 0770, rancagua</span>
+			</div>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content" style="font-size:25px;">$-33079</span>		
+			<span class="title">Mensualidad</span>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content">$452</span>		
+			<span class="title">% SIMCE</span>
+		</div>
+		<div class="itemData clearfix">
+			<span class="content">$559</span>		
+			<span class="title">Puntaje PSU</span>
+		</div>
+	</div>
+		<div id="colofon">
+		<h2><img src="result_files/09-chat-2.png">¿Necesitas ayuda?</h2>
+		<p> Cualquier duda o consulta contactate al correo <b>contacto[at]presupuestate.com</b></p>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		//$('.itemContainer:first').show();
+		
+		$('')
+		
+		
+		$('.educationItem').click(function(){
+			$('.itemContainer').slideUp('fast');
+			$(this).next().slideDown('fast');
+			$('.educationItem').removeClass('active');
+			$(this).addClass('active');
+		});
+				
+		$('#viewChart').click(function(){
+			$('#incomeInformationChart').slideToggle();
+			
+		});
+	});
+</script>		<footer class="container" style="border-top: none; width:100%; float:left;">
+			<small class="pull-right">
+				powered by <b><a href="http://www.weebls-stuff.com//flash/397_tamale.swf" target="blank_" style="color: rgb(102, 102, 102);">TACHANGOU</a></b>
+			</small>
+		</footer>	
+
+	</div>
+
+	<table class="cake-sql-log" id="cakeSqlLog_13229956014edb4f91196993_65676325" summary="Cake SQL Log" border="0" cellspacing="0"><caption>(default) 18 queries took 2771 ms</caption>	<thead>
+		<tr><th>Nr</th><th>Query</th><th>Error</th><th>Affected</th><th>Num. rows</th><th>Took (ms)</th></tr>
+	</thead>
+	<tbody>
+	<tr><td>1</td><td>SHOW FULL COLUMNS FROM `schools`</td><td></td><td style="text-align: right;">14</td><td style="text-align: right;">14</td><td style="text-align: right;">153</td></tr>
+<tr><td>2</td><td>SELECT CHARACTER_SET_NAME FROM INFORMATION_SCHEMA.COLLATIONS WHERE COLLATION_NAME= 'utf8_general_ci';</td><td></td><td style="text-align: right;">1</td><td style="text-align: right;">1</td><td style="text-align: right;">152</td></tr>
+<tr><td>3</td><td>SELECT CHARACTER_SET_NAME FROM INFORMATION_SCHEMA.COLLATIONS WHERE COLLATION_NAME= 'latin1_swedish_ci';</td><td></td><td style="text-align: right;">1</td><td style="text-align: right;">1</td><td style="text-align: right;">152</td></tr>
+<tr><td>4</td><td>SHOW FULL COLUMNS FROM `school_prices`</td><td></td><td style="text-align: right;">7</td><td style="text-align: right;">7</td><td style="text-align: right;">158</td></tr>
+<tr><td>5</td><td>SHOW FULL COLUMNS FROM `colleges`</td><td></td><td style="text-align: right;">5</td><td style="text-align: right;">5</td><td style="text-align: right;">153</td></tr>
+<tr><td>6</td><td>SHOW FULL COLUMNS FROM `degrees`</td><td></td><td style="text-align: right;">9</td><td style="text-align: right;">9</td><td style="text-align: right;">157</td></tr>
+<tr><td>7</td><td>SHOW FULL COLUMNS FROM `degrees_history`</td><td></td><td style="text-align: right;">7</td><td style="text-align: right;">7</td><td style="text-align: right;">154</td></tr>
+<tr><td>8</td><td>SHOW FULL COLUMNS FROM `locations`</td><td></td><td style="text-align: right;">6</td><td style="text-align: right;">6</td><td style="text-align: right;">160</td></tr>
+<tr><td>9</td><td>SELECT `School`.`id`, `School`.`mineduc_id`, 
+`School`.`name`, `School`.`address`, `School`.`city`, `School`.`email`, 
+`School`.`psu_function`, `School`.`simce_function`, `School`.`latitude`,
+ `School`.`longitude`, `School`.`price_function`, `School`.`active`, 
+`School`.`created`, `School`.`modified` FROM `schools` AS `School`   
+WHERE `School`.`id` = 11    LIMIT 1</td><td></td><td style="text-align: right;">1</td><td style="text-align: right;">1</td><td style="text-align: right;">153</td></tr>
+<tr><td>10</td><td>SELECT `SchoolPrice`.`id`, `SchoolPrice`.`school_id`,
+ `SchoolPrice`.`year`, `SchoolPrice`.`price`, `SchoolPrice`.`active`, 
+`SchoolPrice`.`created`, `SchoolPrice`.`modified` FROM `school_prices` 
+AS `SchoolPrice`   WHERE `SchoolPrice`.`school_id` = (11)   </td><td></td><td style="text-align: right;">5</td><td style="text-align: right;">5</td><td style="text-align: right;">153</td></tr>
+<tr><td>11</td><td>SELECT `School`.`id`, `School`.`mineduc_id`, 
+`School`.`name`, `School`.`address`, `School`.`city`, `School`.`email`, 
+`School`.`psu_function`, `School`.`simce_function`, `School`.`latitude`,
+ `School`.`longitude`, `School`.`price_function`, `School`.`active`, 
+`School`.`created`, `School`.`modified` FROM `schools` AS `School`   
+WHERE `School`.`id` = 13    LIMIT 1</td><td></td><td style="text-align: right;">1</td><td style="text-align: right;">1</td><td style="text-align: right;">152</td></tr>
+<tr><td>12</td><td>SELECT `SchoolPrice`.`id`, `SchoolPrice`.`school_id`,
+ `SchoolPrice`.`year`, `SchoolPrice`.`price`, `SchoolPrice`.`active`, 
+`SchoolPrice`.`created`, `SchoolPrice`.`modified` FROM `school_prices` 
+AS `SchoolPrice`   WHERE `SchoolPrice`.`school_id` = (13)   </td><td></td><td style="text-align: right;">5</td><td style="text-align: right;">5</td><td style="text-align: right;">153</td></tr>
+<tr><td>13</td><td>SELECT `School`.`id`, `School`.`mineduc_id`, 
+`School`.`name`, `School`.`address`, `School`.`city`, `School`.`email`, 
+`School`.`psu_function`, `School`.`simce_function`, `School`.`latitude`,
+ `School`.`longitude`, `School`.`price_function`, `School`.`active`, 
+`School`.`created`, `School`.`modified` FROM `schools` AS `School`   
+WHERE `School`.`id` = 19    LIMIT 1</td><td></td><td style="text-align: right;">1</td><td style="text-align: right;">1</td><td style="text-align: right;">152</td></tr>
+<tr><td>14</td><td>SELECT `SchoolPrice`.`id`, `SchoolPrice`.`school_id`,
+ `SchoolPrice`.`year`, `SchoolPrice`.`price`, `SchoolPrice`.`active`, 
+`SchoolPrice`.`created`, `SchoolPrice`.`modified` FROM `school_prices` 
+AS `SchoolPrice`   WHERE `SchoolPrice`.`school_id` = (19)   </td><td></td><td style="text-align: right;">5</td><td style="text-align: right;">5</td><td style="text-align: right;">157</td></tr>
+<tr><td>15</td><td>SELECT `School`.`id`, `School`.`mineduc_id`, 
+`School`.`name`, `School`.`address`, `School`.`city`, `School`.`email`, 
+`School`.`psu_function`, `School`.`simce_function`, `School`.`latitude`,
+ `School`.`longitude`, `School`.`price_function`, `School`.`active`, 
+`School`.`created`, `School`.`modified` FROM `schools` AS `School`   
+WHERE `School`.`id` = 20    LIMIT 1</td><td></td><td style="text-align: right;">1</td><td style="text-align: right;">1</td><td style="text-align: right;">153</td></tr>
+<tr><td>16</td><td>SELECT `SchoolPrice`.`id`, `SchoolPrice`.`school_id`,
+ `SchoolPrice`.`year`, `SchoolPrice`.`price`, `SchoolPrice`.`active`, 
+`SchoolPrice`.`created`, `SchoolPrice`.`modified` FROM `school_prices` 
+AS `SchoolPrice`   WHERE `SchoolPrice`.`school_id` = (20)   </td><td></td><td style="text-align: right;">5</td><td style="text-align: right;">5</td><td style="text-align: right;">152</td></tr>
+<tr><td>17</td><td>SELECT `School`.`id`, `School`.`mineduc_id`, 
+`School`.`name`, `School`.`address`, `School`.`city`, `School`.`email`, 
+`School`.`psu_function`, `School`.`simce_function`, `School`.`latitude`,
+ `School`.`longitude`, `School`.`price_function`, `School`.`active`, 
+`School`.`created`, `School`.`modified` FROM `schools` AS `School`   
+WHERE `School`.`id` = 12    LIMIT 1</td><td></td><td style="text-align: right;">1</td><td style="text-align: right;">1</td><td style="text-align: right;">154</td></tr>
+<tr><td>18</td><td>SELECT `SchoolPrice`.`id`, `SchoolPrice`.`school_id`,
+ `SchoolPrice`.`year`, `SchoolPrice`.`price`, `SchoolPrice`.`active`, 
+`SchoolPrice`.`created`, `SchoolPrice`.`modified` FROM `school_prices` 
+AS `SchoolPrice`   WHERE `SchoolPrice`.`school_id` = (12)   </td><td></td><td style="text-align: right;">5</td><td style="text-align: right;">5</td><td style="text-align: right;">153</td></tr>
+	</tbody></table>
+	
+
+</body></html>

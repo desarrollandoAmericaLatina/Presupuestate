@@ -11,14 +11,15 @@ body{
 
 #sendRequest{
 	margin-left: 185px;
-	margin-top:40px;
 }
 
 label{
 	width:140px;
 	position: absolute;
-	color:#6aa128;
+	color:#363636;
 	display:none;
+    margin-top: 1px;
+    padding: 4px 3px!important;
 }
 
 #principalForm select[value="0"]{
@@ -33,9 +34,9 @@ label{
    background-image: url("../img/more.png");
     background-position: 5px 50%;
     background-repeat: no-repeat;
-    border-bottom: 1px dotted #C7C7C6;
-    border-top: 1px dotted #C7C7C6;
-    color: #999999;
+    border-bottom: 1px dotted #999;
+    border-top: 1px dotted #999;
+    color: #666;
     cursor: pointer;
     float: left;
     margin-top: -1px;
@@ -53,6 +54,8 @@ label{
 		background-color: #f9b103;
 		color:#fff;
    		background-image: url("../img/menos.png");
+	text-shadow: 1px 1px 1px #999999;
+	filter: dropshadow(color=#999999, offx=1, offy=1);
 
 	}
 
@@ -209,7 +212,7 @@ label{
 }
 
 #universityInfo{
-	border-top:1px dotted #c2c2c2;
+	border-top:1px dotted #999;
 	float:left;
 	margin-top: 20px;
 	padding-top: 10px; 

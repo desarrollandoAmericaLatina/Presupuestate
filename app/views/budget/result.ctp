@@ -4,7 +4,7 @@
 	</h1>
 </center>
 
-<div class="span9" style="border-right:1px dotted #ccc; float: left;margin-right: 5px;padding-right: 9px;width: 510px !important;">
+<div class="span9" style="border-right:1px dotted #666; float: left;margin-right: 5px;padding-right: 9px;width: 510px !important;">
 	<h3><img src="/img/161-calculator.png"/>Presupuesto educacional</h3>
 	<div class="incomeBox dark">
 		<b>El costo estimado de la carrera <span class="income pull-right">$14.450.078</span> </b>
