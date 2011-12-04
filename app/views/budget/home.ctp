@@ -28,8 +28,9 @@
             	<div class="input">
 					<select class="xlarge" rel="ubication" name="data[Recipe][location]">
 						<option value="0">Selecciona ubicación</option>
-						<option value="1">Santiago</option>
-						<option value="2">Providencia</option>
+						<?foreach($location as $k => $v):?>
+						<option value="<?=$k?>"><?=$v?></option>
+						<?endforeach;?>
 					</select>
             	</div>
           	</div>	
