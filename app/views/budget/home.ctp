@@ -35,7 +35,7 @@
             	</div>
           	</div>	
 			<div id="university" class="clearfix">
-            	<label for="" class="label notice">Universidad</label>
+            	<label for="" class="label notice">Universidad / Carrera</label>
             	<div class="input">
 					<select class="xlarge" id="college" rel="university" name="data[Recipe][college]">
 						<option value="0">Selecciona universidad</option>
