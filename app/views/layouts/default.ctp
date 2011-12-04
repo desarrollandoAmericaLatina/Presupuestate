@@ -26,6 +26,7 @@
 	$this->Javascript->link('bootstrap-twipsy', false);
 	$this->Javascript->link('bootstrap-alerts', false);
 	$this->Javascript->link('bootstrap-popover', false);
+	$this->Javascript->link('jquerytext', false);
 	$this->Javascript->link('modernizr.custom.87614', false);
 	
 	echo $asset->scripts_for_layout();

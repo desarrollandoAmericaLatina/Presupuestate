@@ -1,21 +1,39 @@
 <center>
 	<h1 style="margin: 40px 0px;">
 		<img src="/img/logo.png" alt="Presupuestate beta"/><br/>
-		<small style="font-size:15px;">Ingresa los siguientes datos para generar tu <b>presupuesto</b></small>
 	</h1>
 </center>
 
 <div class="span9" style="float: left;margin-right: 5px;padding-right: 9px;width: 510px !important;">
 	<h3>Presupuesto educacional</h3>
 	<div class="incomeBox">
-		<b>El presupuesto aproximado de educacion es de <span class="income pull-right">$14.450.078</span> </b>
+		<b>El arancel estimado es de <span class="income pull-right">$14.450.078</span> </b>
 	</div>
 	<div class="incomeBox">
-		<b>Para alcanzar esta meta debes ahorrar mensualmente <span class="save pull-right">$1.000.000</span> </b>
+		<b>Para alcanzar esta meta debes ahorrar mensualmente<span class="save pull-right">$1.000.000</span> </b>
 	</div>
-	
+	<div class="clearfix">
+		<div class="clearfix" id="incomeInformationChart" style="display:none;">
+			<img src="https://chart.googleapis.com/chart?cht=s&chd=t:12,16,16,24,26,28,41,51,66,68,13,45,81|16,14,1973,34,22,31,31,48,71,120,15,38,84&chxt=x,y&chs=500x125&chm=o,0000FF,0,-1,0,0|o,f9b103,0,0:9:,5,0.1|D,999999,1,10:,1,1"/>
+			<img src="/img/indice.png"/>
+		</div>
+		<a href="#" style="font-weight: normal;" id="viewChart" class="pull-right btn secondary small">Ver analisis de presupuesto</a>
+	</div>
+
 	<div id="universityInfo">
 		<h5>Medicina / Universidad de Chile</h5>
+		<div class="itemData big clearfix">
+			<span class="content">$427.000</span>		
+			<span class="title">Arancel Estimado</span>
+		</div>
+		<div class="itemData big clearfix">
+			<span class="content">650</span>		
+			<span class="title">Estimado PSU</span>
+		</div>
+		<div class="itemData big clearfix">
+			<span class="content">650</span>		
+			<span class="title">Estimado PSU</span>
+		</div>
 		
 	</div>
 
@@ -112,6 +130,11 @@
 			$(this).next().slideDown('fast');
 			$('.educationItem').removeClass('active');
 			$(this).addClass('active');
-		})		
+		});
+				
+		$('#viewChart').click(function(){
+			$('#incomeInformationChart').slideToggle();
+			
+		});
 	});
 </script>
