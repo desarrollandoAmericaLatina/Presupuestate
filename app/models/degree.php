@@ -15,7 +15,6 @@ class Degree extends AppModel {
 
 		$function = $this->field("last_entered_function");
 		$math = '$result = '.str_replace("x", $year, $function).';';
-		pr($math);
 		eval($math);
 
 		return $result;	
