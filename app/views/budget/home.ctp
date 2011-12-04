@@ -75,16 +75,20 @@
 				dataType: "json",
 				success: function(data) {
 					$('#degree_select').html("");
+					$('#degree .input').html('<select id="degree_select"></select><img style="display:none;" src="/img/loader.gif" id="loader"/>');
 					$('#degree_select').append($("<option> </option>").attr("value",0).text('Selecciona una carrera'));
 					$.each(data, function(key, value) {
+						$('#degree_select').attr('rel','degree');
+			 			$('#degree_select').attr('name','data[Recipe][degree]');
 			            $('#degree_select').append($("<option> </option>").attr("value",key).text(value));
 						$('#degree_select').attr('disabled',false)
 				       	$('#loader').fadeOut();
-				       	
 			        });
 				}
 			});
+
 	}
+	
 		$('input[type="text"]').val('');
 		$('select').val('0');
 		
@@ -154,7 +158,7 @@
 				$('#university label').removeClass('important').addClass('notice');
 			}
 						
-			if($('#principalForm select[rel="degree"]').val()=="0"){
+			if($('#principalForm #degree_select').val()=="0"){
 				$('#degree').addClass('error_form');
 				$('#degree select').addClass('error');
 				$('#degree label').removeClass('notice').addClass('important');

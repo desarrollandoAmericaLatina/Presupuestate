@@ -26,6 +26,11 @@ label{
 	color:#BFBFBF;
 }
 
+#degree_select{
+	width:270px;
+	
+}
+
 #principalForm input[type"text"]{
 	color:#999;
 }
