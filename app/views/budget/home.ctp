@@ -8,7 +8,7 @@
 			<div id="monthlyIncome" class="clearfix">
             	<label for="xlInput">Ingreso mensual</label>
             	<div class="input">
-            	  <input type="text" size="30" name=""  placeholder="Ingreso mensual" class="xlarge" rel="monthlyIncome"  name="data[Recipe][budget]">
+            	  <input type="text" size="30" name="data[Recipe][budget]"  placeholder="Ingreso mensual" class="xlarge" rel="monthlyIncome"  >
             	</div>
           	</div>	
 			<div id="family" class="clearfix">

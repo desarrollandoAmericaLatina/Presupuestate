@@ -5,6 +5,32 @@ class BudgetController extends AppController {
 	var $uses = array('School', 'College', 'Degree', 'Location');
 
 	function result() {
+		
+
+
+
+
+	}
+	
+	function home() {
+		$college = $this->College->getAll();	
+		$locations = $this->Location->getLocation();
+		$this->set('college',$college);
+		$this->set('location',$locations);
+	}
+	
+	function getDegree($id) {
+		$degree = $this->Degree->getByCollegeId($id);
+		echo json_encode($degree);
+		die;
+	}
+	
+	function dataProcess() {
+		$schoolData = $this->schoolProcess($this->data['Recipe']['budget'],$this->data['Recipe']['family_nr'],$this->data['Recipe']['location'],$this->data['Recipe']['college'], $this->data['Recipe']['degree']);
+		die;
+	}
+	
+	function schoolProcess($budget,$family_nr, $location, $college, $degree) {
 		$a = microtime(true);
 
 		$ubication = array(
@@ -16,11 +42,11 @@ class BudgetController extends AppController {
 		);
 
 		$this->data = array(
-			"monthly_income"	=> 1231230,
-			"family"			=> 8,
-			"ubication"			=> 9,
-			"college"			=> 1,
-			"degree"			=> 1,
+			"monthly_income"	=> $budget,
+			"family"			=> $family_nr,
+			"ubication"			=> $location,
+			"college"			=> $college,
+			"degree"			=> $degree,
 			"join_year"			=> 2024
 		);
 
@@ -30,9 +56,6 @@ class BudgetController extends AppController {
 			"simce" => 8,
 			"psu" => 10,
 		);
-
-		$this->College = ClassRegistry::init("College");
-		$this->School = ClassRegistry::init("School");
 
 		if(empty($this->data)) {
 			$this->redirect("/");
@@ -86,28 +109,6 @@ class BudgetController extends AppController {
 
 
 		pr($indexes);
-
-
-
-
-	}
-	
-	function home() {
-		$college = $this->College->getAll();	
-		$locations = $this->Location->getLocation();
-		$this->set('college',$college);
-		$this->set('location',$locations);
-	}
-	
-	function getDegree($id) {
-		$degree = $this->Degree->getByCollegeId($id);
-		echo json_encode($degree);
-		die;
-	}
-	
-	function dataProcess() {
-		pr($this->data);
-		die;
 	}
 }
 ?>
